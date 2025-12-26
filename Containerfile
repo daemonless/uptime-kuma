@@ -22,8 +22,8 @@ RUN if [ -z "${UPTIME_KUMA_VERSION}" ]; then \
 
 WORKDIR /app/uptime-kuma
 
-# Install and build
-RUN npm run setup
+# Install and build (skip git checkout from npm run setup - we already have the right version)
+RUN npm ci --omit dev && npm run download-dist
 
 # Patch Playwright for FreeBSD compatibility
 RUN sed -i '' "s/process.platform === 'linux'/process.platform === 'freebsd'/" \
