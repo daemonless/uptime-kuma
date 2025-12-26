@@ -1,0 +1,9 @@
+#!/bin/sh
+# Uptime Kuma initialization
+
+# Ensure config directory exists with correct permissions
+mkdir -p /config
+chown -R bsd:bsd /config
+
+# Ensure app directory is writable
+chown -R bsd:bsd /app
