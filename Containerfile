@@ -7,7 +7,7 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
 # Build dependencies (including C compiler for native modules like sqlite3)
 RUN pkg update && pkg install -y \
     node22 npm-node22 git-lite python311 \
-    gmake pkgconf sqlite3 FreeBSD-clang \
+    gmake pkgconf sqlite3 FreeBSD-clang FreeBSD-binutils \
     && pkg clean -ay
 
 # Get latest release version
