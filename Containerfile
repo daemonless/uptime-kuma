@@ -75,6 +75,7 @@ COPY root/ /
 RUN chmod +x /etc/services.d/*/run /etc/cont-init.d/* 2>/dev/null || true
 
 # Environment for Chromium support
+ENV UPTIME_KUMA_IS_CONTAINER=1
 ENV UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 ENV DATA_DIR=/config
