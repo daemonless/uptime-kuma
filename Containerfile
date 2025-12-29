@@ -62,13 +62,12 @@ RUN pkg update && \
 # Create chromium symlink for Uptime Kuma compatibility
 RUN ln -sf /usr/local/bin/chrome /usr/bin/chromium || true
 
-# Copy built application from builder
-COPY --from=builder /app/uptime-kuma /app/uptime-kuma
-COPY --from=builder /app/version /app/version
+# Copy built application from builder (with correct ownership)
+COPY --from=builder --chown=bsd:bsd /app/uptime-kuma /app/uptime-kuma
+COPY --from=builder --chown=bsd:bsd /app/version /app/version
 
 # Create directories
-RUN mkdir -p /config && \
-    chown -R bsd:bsd /config /app
+RUN mkdir -p /config && chown bsd:bsd /config
 
 # Copy service files
 COPY root/ /
