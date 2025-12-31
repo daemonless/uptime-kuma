@@ -37,6 +37,9 @@ ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node22 chromium"
 ARG UPSTREAM_URL="https://api.github.com/repos/louislam/uptime-kuma/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
+ARG HEALTHCHECK_ENDPOINT="http://localhost:3001/api/entry-page"
+
+ENV HEALTHCHECK_URL="${HEALTHCHECK_ENDPOINT}"
 
 LABEL org.opencontainers.image.title="Uptime Kuma" \
     org.opencontainers.image.description="A fancy self-hosted monitoring tool on FreeBSD" \
@@ -52,6 +55,7 @@ LABEL org.opencontainers.image.title="Uptime Kuma" \
     io.daemonless.category="Utilities" \
     io.daemonless.upstream-url="${UPSTREAM_URL}" \
     io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
+    io.daemonless.healthcheck-url="${HEALTHCHECK_ENDPOINT}" \
     io.daemonless.packages="${PACKAGES}" \
     org.freebsd.jail.allow.raw_sockets="required"
 
