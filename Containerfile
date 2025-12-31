@@ -36,7 +36,7 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node22 chromium"
 ARG UPSTREAM_URL="https://api.github.com/repos/louislam/uptime-kuma/releases/latest"
-ARG UPSTREAM_SED="s/.*\"tag_name\":\"\\([^\"]*\\)\".*/\\1/p"
+ARG UPSTREAM_JQ=".tag_name"
 
 LABEL org.opencontainers.image.title="Uptime Kuma" \
     org.opencontainers.image.description="A fancy self-hosted monitoring tool on FreeBSD" \
@@ -51,7 +51,7 @@ LABEL org.opencontainers.image.title="Uptime Kuma" \
     io.daemonless.config-mount="/config" \
     io.daemonless.category="Utilities" \
     io.daemonless.upstream-url="${UPSTREAM_URL}" \
-    io.daemonless.upstream-sed="${UPSTREAM_SED}" \
+    io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
     io.daemonless.packages="${PACKAGES}" \
     org.freebsd.jail.allow.raw_sockets="required"
 
