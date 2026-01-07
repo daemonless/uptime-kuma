@@ -1,0 +1,4 @@
+icon: ':material-chart-line:'
+cit:
+  mode: port
+  port: 3001
