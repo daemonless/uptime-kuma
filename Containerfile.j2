@@ -36,22 +36,33 @@ ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node22 chromium"
 ARG UPSTREAM_URL="https://api.github.com/repos/louislam/uptime-kuma/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
+{%- if ports %}
+ARG HEALTHCHECK_ENDPOINT="http://localhost:{{ ports[0].port }}/api/entry-page"
+{%- else %}
 ARG HEALTHCHECK_ENDPOINT="http://localhost:3001/api/entry-page"
+{%- endif %}
 
 ENV HEALTHCHECK_URL="${HEALTHCHECK_ENDPOINT}"
 
 # --- Metadata (Injected by Generator) ---
-LABEL org.opencontainers.image.title="Uptime Kuma" \
-      org.opencontainers.image.description="A fancy self-hosted monitoring tool on FreeBSD." \
-      org.opencontainers.image.source="https://github.com/daemonless/uptime-kuma" \
-      org.opencontainers.image.url="https://uptime.kuma.pet/" \
+LABEL org.opencontainers.image.title="{{ title }}" \
+      org.opencontainers.image.description="{{ description }}" \
+      org.opencontainers.image.source="{{ repo_url }}" \
+      org.opencontainers.image.url="{{ web_url }}" \
       org.opencontainers.image.documentation="https://github.com/louislam/uptime-kuma/wiki" \
       org.opencontainers.image.licenses="BSD-2-Clause" \
       org.opencontainers.image.vendor="daemonless" \
       org.opencontainers.image.authors="daemonless" \
-      io.daemonless.category="Utilities" \
-      io.daemonless.port="3001" \
-      io.daemonless.volumes="/config" \
+      io.daemonless.category="{{ category }}" \
+{%- if ports %}
+      io.daemonless.port="{{ ports[0].port }}" \
+{%- endif %}
+{%- if volumes %}
+      io.daemonless.volumes="{{ volumes | map(attribute='path') | join(',') }}" \
+{%- endif %}
+{%- if raw_sockets %}
+      org.freebsd.jail.allow.raw_sockets="required" \
+{%- endif %}
       io.daemonless.arch="${FREEBSD_ARCH}" \
       io.daemonless.upstream-url="${UPSTREAM_URL}" \
       io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
@@ -85,7 +96,11 @@ ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 ENV DATA_DIR=/config
 
 # --- Expose (Injected by Generator) ---
-EXPOSE 3001
+{%- if ports %}
+EXPOSE {{ ports | map(attribute='port') | join(' ') }}
+{%- endif %}
 
 # --- Volumes (Injected by Generator) ---
-VOLUME /config
+{%- if volumes %}
+VOLUME {{ volumes | map(attribute='path') | join(' ') }}
+{%- endif %}

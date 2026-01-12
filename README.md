@@ -1,56 +1,105 @@
 # Uptime Kuma
 
-A fancy self-hosted monitoring tool, running natively on FreeBSD.
+A fancy self-hosted monitoring tool on FreeBSD.
 
-## Features
+| | |
+|---|---|
+| **Port** | 3001 |
+| **Registry** | `ghcr.io/daemonless/uptime-kuma` |
+| **Source** | [https://github.com/louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) |
+| **Website** | [https://uptime.kuma.pet/](https://uptime.kuma.pet/) |
 
-- Monitoring uptime for HTTP(s), TCP, Ping, DNS, and more
-- Fancy, reactive, fast UI/UX
-- Notifications via Telegram, Discord, Slack, Email, and 90+ services
-- Multi-language support
-- Status pages
-- Browser Engine monitoring (with Chromium)
+## Deployment
 
-## Quick Start
+### Podman Compose
+
+```yaml
+services:
+  uptime-kuma:
+    image: ghcr.io/daemonless/uptime-kuma:latest
+    container_name: uptime-kuma
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - UPTIME_KUMA_IS_CONTAINER=1
+      - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - DATA_DIR=/config
+    volumes:
+      - /path/to/containers/uptime-kuma:/config
+    ports:
+      - 3001:3001
+    restart: unless-stopped
+```
+
+### Podman CLI
 
 ```bash
 podman run -d --name uptime-kuma \
-  --annotation 'org.freebsd.jail.allow.raw_sockets=true' \
-  -v /containers/uptime-kuma:/config \
   -p 3001:3001 \
+  -e PUID=@PUID@ \
+  -e PGID=@PGID@ \
+  -e TZ=@TZ@ \
+  -e UPTIME_KUMA_IS_CONTAINER=1 \
+  -e UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
+  -e PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
+  -e DATA_DIR=/config \
+  -v /path/to/containers/uptime-kuma:/config \ 
   ghcr.io/daemonless/uptime-kuma:latest
 ```
+Access at: `http://localhost:3001`
 
-Access the web UI at `http://localhost:3001`
+### Ansible
+
+```yaml
+- name: Deploy uptime-kuma
+  containers.podman.podman_container:
+    name: uptime-kuma
+    image: ghcr.io/daemonless/uptime-kuma:latest
+    state: started
+    restart_policy: always
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
+      UPTIME_KUMA_IS_CONTAINER: "1"
+      UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: "1"
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      DATA_DIR: "/config"
+    ports:
+      - "3001:3001"
+    volumes:
+      - "/path/to/containers/uptime-kuma:/config"
+```
 
 ## Configuration
 
+### Environment Variables
+
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `PUID` | 1000 | User ID |
-| `PGID` | 1000 | Group ID |
-| `DATA_DIR` | /config | Data directory |
+| `PUID` | `1000` | User ID for the application process |
+| `PGID` | `1000` | Group ID for the application process |
+| `TZ` | `UTC` | Timezone for the container |
+| `UPTIME_KUMA_IS_CONTAINER` | `1` |  |
+| `UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC` | `1` |  |
+| `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD` | `1` |  |
+| `DATA_DIR` | `/config` |  |
 
-## Volumes
+### Volumes
 
 | Path | Description |
 |------|-------------|
-| `/config` | Database and configuration |
+| `/config` | Data directory (database, settings) |
 
-## Ports
+### Ports
 
-| Port | Description |
-|------|-------------|
-| 3001 | Web UI |
+| Port | Protocol | Description |
+|------|----------|-------------|
+| `3001` | TCP | Web UI |
 
 ## Notes
 
-- **Ping monitoring** requires `allow.raw_sockets` jail annotation
-- **Browser Engine monitoring** uses FreeBSD's Chromium package
-- Image is larger than typical due to Chromium dependency
-
-## Links
-
-- [Uptime Kuma](https://uptime.kuma.pet/)
-- [Documentation](https://github.com/louislam/uptime-kuma/wiki)
-- [Daemonless](https://daemonless.io)
+- **User:** `bsd` (UID/GID set via PUID/PGID)
+- **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)

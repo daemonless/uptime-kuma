@@ -1,0 +1,47 @@
+name: uptime-kuma
+
+x-daemonless:
+  title: "Uptime Kuma"
+  icon: ":material-chart-line:"
+  category: "Utilities"
+  description: "A fancy self-hosted monitoring tool on FreeBSD."
+  upstream_url: "https://github.com/louislam/uptime-kuma"
+  web_url: "https://uptime.kuma.pet/"
+  freshports_url: "https://www.freshports.org/net-mgmt/uptime-kuma/"
+  user: "bsd"
+  mlock: false
+  raw_sockets: true
+  
+  docs:
+    env:
+      PUID: "User ID for the application process"
+      PGID: "Group ID for the application process"
+      TZ: "Timezone for the container"
+    volumes:
+      /config: "Data directory (database, settings)"
+    ports:
+      3001: "Web UI"
+
+services:
+  uptime-kuma:
+    image: ghcr.io/daemonless/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+    
+    annotations:
+      org.freebsd.jail.allow.raw_sockets: "true"
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - UPTIME_KUMA_IS_CONTAINER=1
+      - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - DATA_DIR=/config
+
+    volumes:
+      - /path/to/containers/uptime-kuma:/config
+
+    ports:
+      - "3001:3001"
