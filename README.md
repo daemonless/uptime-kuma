@@ -60,9 +60,9 @@ Access at: `http://localhost:3001`
     state: started
     restart_policy: always
     env:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "UTC"
+      PUID: "@PUID@"
+      PGID: "@PGID@"
+      TZ: "@TZ@"
       UPTIME_KUMA_IS_CONTAINER: "1"
       UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: "1"
       PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
@@ -74,7 +74,6 @@ Access at: `http://localhost:3001`
 ```
 
 ## Configuration
-
 ### Environment Variables
 
 | Variable | Default | Description |
@@ -86,13 +85,11 @@ Access at: `http://localhost:3001`
 | `UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC` | `1` |  |
 | `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD` | `1` |  |
 | `DATA_DIR` | `/config` |  |
-
 ### Volumes
 
 | Path | Description |
 |------|-------------|
 | `/config` | Data directory (database, settings) |
-
 ### Ports
 
 | Port | Protocol | Description |
