@@ -11,6 +11,7 @@ A fancy self-hosted monitoring tool on FreeBSD.
 |---|---|
 | **Port** | 3001 |
 | **Registry** | `ghcr.io/daemonless/uptime-kuma` |
+| **Docs** | [daemonless.io/images/uptime-kuma](https://daemonless.io/images/uptime-kuma/) |
 | **Source** | [https://github.com/louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) |
 | **Website** | [https://uptime.kuma.pet/](https://uptime.kuma.pet/) |
 
