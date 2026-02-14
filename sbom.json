@@ -1,12 +1,12 @@
 {
   "image": "uptime-kuma",
-  "generated": "2026-02-13T23:11:13Z",
+  "generated": "2026-02-14T14:42:01Z",
   "tags": {
     "latest": {
       "arch": "amd64",
       "app_version": "2.1.1",
       "source": "upstream",
-      "generated": "2026-02-13T23:11:00Z",
+      "generated": "2026-02-14T14:32:52Z",
       "packages": {
         "freebsd": [
           {
