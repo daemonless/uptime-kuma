@@ -1,12 +1,12 @@
 {
   "image": "uptime-kuma",
-  "generated": "2026-02-14T22:10:56Z",
+  "generated": "2026-02-16T18:20:59Z",
   "tags": {
     "latest": {
       "arch": "amd64",
       "app_version": "2.1.1",
       "source": "upstream",
-      "generated": "2026-02-14T22:10:43Z",
+      "generated": "2026-02-16T18:20:45Z",
       "packages": {
         "freebsd": [
           {
@@ -675,7 +675,7 @@
           },
           {
             "name": "node22",
-            "version": "22.21.1"
+            "version": "22.22.0"
           },
           {
             "name": "noto-basic",
