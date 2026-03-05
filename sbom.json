@@ -1,12 +1,12 @@
 {
   "image": "uptime-kuma",
-  "generated": "2026-02-19T09:08:56Z",
+  "generated": "2026-03-05T08:54:39Z",
   "tags": {
     "latest": {
       "arch": "amd64",
-      "app_version": "2.1.3",
+      "app_version": "2.2.0",
       "source": "upstream",
-      "generated": "2026-02-19T09:08:38Z",
+      "generated": "2026-03-05T08:54:17Z",
       "packages": {
         "freebsd": [
           {
@@ -131,7 +131,7 @@
           },
           {
             "name": "abseil",
-            "version": "20250127.1"
+            "version": "20250127.1_1"
           },
           {
             "name": "adwaita-icon-theme",
@@ -171,7 +171,7 @@
           },
           {
             "name": "chromium",
-            "version": "144.0.7559.109"
+            "version": "145.0.7632.109"
           },
           {
             "name": "colord",
@@ -231,7 +231,7 @@
           },
           {
             "name": "expat",
-            "version": "2.7.3"
+            "version": "2.7.4"
           },
           {
             "name": "fftw3",
@@ -287,7 +287,7 @@
           },
           {
             "name": "gnutls",
-            "version": "3.8.11"
+            "version": "3.8.12"
           },
           {
             "name": "gobject-introspection",
@@ -707,7 +707,7 @@
           },
           {
             "name": "nss",
-            "version": "3.120.1"
+            "version": "3.121"
           },
           {
             "name": "oniguruma",
@@ -875,134 +875,6 @@
         "java": [],
         "node": [
           {
-            "name": "@aws-crypto/sha256-browser",
-            "version": "5.2.0"
-          },
-          {
-            "name": "@aws-crypto/sha256-js",
-            "version": "5.2.0"
-          },
-          {
-            "name": "@aws-crypto/supports-web-crypto",
-            "version": "5.2.0"
-          },
-          {
-            "name": "@aws-crypto/util",
-            "version": "5.2.0"
-          },
-          {
-            "name": "@aws-sdk/client-cognito-identity",
-            "version": "3.980.0"
-          },
-          {
-            "name": "@aws-sdk/client-sso",
-            "version": "3.993.0"
-          },
-          {
-            "name": "@aws-sdk/core",
-            "version": "3.973.11"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-cognito-identity",
-            "version": "3.972.3"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-env",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-http",
-            "version": "3.972.11"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-ini",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-login",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-node",
-            "version": "3.972.10"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-process",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-sso",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-web-identity",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/credential-providers",
-            "version": "3.993.0"
-          },
-          {
-            "name": "@aws-sdk/middleware-host-header",
-            "version": "3.972.3"
-          },
-          {
-            "name": "@aws-sdk/middleware-logger",
-            "version": "3.972.3"
-          },
-          {
-            "name": "@aws-sdk/middleware-recursion-detection",
-            "version": "3.972.3"
-          },
-          {
-            "name": "@aws-sdk/middleware-user-agent",
-            "version": "3.972.11"
-          },
-          {
-            "name": "@aws-sdk/nested-clients",
-            "version": "3.993.0"
-          },
-          {
-            "name": "@aws-sdk/region-config-resolver",
-            "version": "3.972.3"
-          },
-          {
-            "name": "@aws-sdk/token-providers",
-            "version": "3.993.0"
-          },
-          {
-            "name": "@aws-sdk/types",
-            "version": "3.973.1"
-          },
-          {
-            "name": "@aws-sdk/util-endpoints",
-            "version": "3.980.0"
-          },
-          {
-            "name": "@aws-sdk/util-locate-window",
-            "version": "3.965.4"
-          },
-          {
-            "name": "@aws-sdk/util-user-agent-browser",
-            "version": "3.972.3"
-          },
-          {
-            "name": "@aws-sdk/util-user-agent-node",
-            "version": "3.972.9"
-          },
-          {
-            "name": "@aws-sdk/xml-builder",
-            "version": "3.972.5"
-          },
-          {
-            "name": "@aws/lambda-invoke-store",
-            "version": "0.2.3"
-          },
-          {
-            "name": "@azure-rest/core-client",
-            "version": "2.5.1"
-          },
-          {
             "name": "@azure/abort-controller",
             "version": "2.1.2"
           },
@@ -1011,60 +883,8 @@
             "version": "1.10.1"
           },
           {
-            "name": "@azure/core-client",
-            "version": "1.10.1"
-          },
-          {
-            "name": "@azure/core-http-compat",
-            "version": "2.3.2"
-          },
-          {
-            "name": "@azure/core-lro",
-            "version": "2.7.2"
-          },
-          {
-            "name": "@azure/core-paging",
-            "version": "1.6.2"
-          },
-          {
-            "name": "@azure/core-rest-pipeline",
-            "version": "1.22.2"
-          },
-          {
-            "name": "@azure/core-tracing",
-            "version": "1.3.1"
-          },
-          {
             "name": "@azure/core-util",
             "version": "1.13.1"
-          },
-          {
-            "name": "@azure/identity",
-            "version": "4.13.0"
-          },
-          {
-            "name": "@azure/keyvault-common",
-            "version": "2.0.0"
-          },
-          {
-            "name": "@azure/keyvault-keys",
-            "version": "4.10.0"
-          },
-          {
-            "name": "@azure/logger",
-            "version": "1.3.0"
-          },
-          {
-            "name": "@azure/msal-browser",
-            "version": "4.28.2"
-          },
-          {
-            "name": "@azure/msal-common",
-            "version": "15.14.2"
-          },
-          {
-            "name": "@azure/msal-node",
-            "version": "3.8.7"
           },
           {
             "name": "@gar/promisify",
@@ -1116,15 +936,15 @@
           },
           {
             "name": "@noble/ciphers",
-            "version": "2.1.1"
+            "version": "0.5.3"
           },
           {
             "name": "@noble/curves",
-            "version": "2.0.1"
+            "version": "1.1.0"
           },
           {
             "name": "@noble/hashes",
-            "version": "2.0.1"
+            "version": "1.3.1"
           },
           {
             "name": "@npmcli/fs",
@@ -1200,179 +1020,19 @@
           },
           {
             "name": "@scure/base",
-            "version": "2.0.0"
+            "version": "1.1.1"
           },
           {
             "name": "@scure/bip32",
-            "version": "2.0.1"
+            "version": "1.3.1"
           },
           {
             "name": "@scure/bip39",
-            "version": "2.0.1"
+            "version": "1.2.1"
           },
           {
             "name": "@sindresorhus/is",
             "version": "5.6.0"
-          },
-          {
-            "name": "@smithy/abort-controller",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/config-resolver",
-            "version": "4.4.6"
-          },
-          {
-            "name": "@smithy/core",
-            "version": "3.23.2"
-          },
-          {
-            "name": "@smithy/credential-provider-imds",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/fetch-http-handler",
-            "version": "5.3.9"
-          },
-          {
-            "name": "@smithy/hash-node",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/invalid-dependency",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/is-array-buffer",
-            "version": "2.2.0"
-          },
-          {
-            "name": "@smithy/middleware-content-length",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/middleware-endpoint",
-            "version": "4.4.16"
-          },
-          {
-            "name": "@smithy/middleware-retry",
-            "version": "4.4.33"
-          },
-          {
-            "name": "@smithy/middleware-serde",
-            "version": "4.2.9"
-          },
-          {
-            "name": "@smithy/middleware-stack",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/node-config-provider",
-            "version": "4.3.8"
-          },
-          {
-            "name": "@smithy/node-http-handler",
-            "version": "4.4.10"
-          },
-          {
-            "name": "@smithy/property-provider",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/protocol-http",
-            "version": "5.3.8"
-          },
-          {
-            "name": "@smithy/querystring-builder",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/querystring-parser",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/service-error-classification",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/shared-ini-file-loader",
-            "version": "4.4.3"
-          },
-          {
-            "name": "@smithy/signature-v4",
-            "version": "5.3.8"
-          },
-          {
-            "name": "@smithy/smithy-client",
-            "version": "4.11.5"
-          },
-          {
-            "name": "@smithy/types",
-            "version": "4.12.0"
-          },
-          {
-            "name": "@smithy/url-parser",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/util-base64",
-            "version": "4.3.0"
-          },
-          {
-            "name": "@smithy/util-body-length-browser",
-            "version": "4.2.0"
-          },
-          {
-            "name": "@smithy/util-body-length-node",
-            "version": "4.2.1"
-          },
-          {
-            "name": "@smithy/util-buffer-from",
-            "version": "2.2.0"
-          },
-          {
-            "name": "@smithy/util-config-provider",
-            "version": "4.2.0"
-          },
-          {
-            "name": "@smithy/util-defaults-mode-browser",
-            "version": "4.3.32"
-          },
-          {
-            "name": "@smithy/util-defaults-mode-node",
-            "version": "4.2.35"
-          },
-          {
-            "name": "@smithy/util-endpoints",
-            "version": "3.2.8"
-          },
-          {
-            "name": "@smithy/util-hex-encoding",
-            "version": "4.2.0"
-          },
-          {
-            "name": "@smithy/util-middleware",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/util-retry",
-            "version": "4.2.8"
-          },
-          {
-            "name": "@smithy/util-stream",
-            "version": "4.5.12"
-          },
-          {
-            "name": "@smithy/util-uri-escape",
-            "version": "4.2.0"
-          },
-          {
-            "name": "@smithy/util-utf8",
-            "version": "2.3.0"
-          },
-          {
-            "name": "@smithy/uuid",
-            "version": "1.1.0"
           },
           {
             "name": "@socket.io/component-emitter",
@@ -1452,7 +1112,7 @@
           },
           {
             "name": "@types/node",
-            "version": "20.19.33"
+            "version": "20.19.35"
           },
           {
             "name": "@types/qs",
@@ -1612,7 +1272,7 @@
           },
           {
             "name": "bn.js",
-            "version": "4.12.2"
+            "version": "4.12.3"
           },
           {
             "name": "body-parser",
@@ -1621,10 +1281,6 @@
           {
             "name": "boolbase",
             "version": "1.0.0"
-          },
-          {
-            "name": "bowser",
-            "version": "2.14.1"
           },
           {
             "name": "brace-expansion",
@@ -1645,10 +1301,6 @@
           {
             "name": "buffer-from",
             "version": "1.1.2"
-          },
-          {
-            "name": "bundle-name",
-            "version": "4.1.0"
           },
           {
             "name": "bytes",
@@ -1839,20 +1491,8 @@
             "version": "6.0.0"
           },
           {
-            "name": "default-browser",
-            "version": "5.5.0"
-          },
-          {
-            "name": "default-browser-id",
-            "version": "5.0.1"
-          },
-          {
             "name": "defer-to-connect",
             "version": "2.0.1"
-          },
-          {
-            "name": "define-lazy-prop",
-            "version": "3.0.0"
           },
           {
             "name": "delayed-stream",
@@ -2243,16 +1883,8 @@
             "version": "2.16.1"
           },
           {
-            "name": "is-docker",
-            "version": "3.0.0"
-          },
-          {
             "name": "is-fullwidth-code-point",
             "version": "3.0.0"
-          },
-          {
-            "name": "is-inside-container",
-            "version": "1.0.0"
           },
           {
             "name": "is-lambda",
@@ -2265,10 +1897,6 @@
           {
             "name": "is-url",
             "version": "1.2.4"
-          },
-          {
-            "name": "is-wsl",
-            "version": "3.1.1"
           },
           {
             "name": "isarray",
@@ -2472,7 +2100,7 @@
           },
           {
             "name": "minimatch",
-            "version": "3.1.2"
+            "version": "3.1.5"
           },
           {
             "name": "minimist",
@@ -2604,7 +2232,7 @@
           },
           {
             "name": "nostr-tools",
-            "version": "2.23.1"
+            "version": "2.20.0"
           },
           {
             "name": "nostr-wasm",
@@ -2657,10 +2285,6 @@
           {
             "name": "once",
             "version": "1.4.0"
-          },
-          {
-            "name": "open",
-            "version": "10.2.0"
           },
           {
             "name": "openid-client",
@@ -2732,11 +2356,11 @@
           },
           {
             "name": "pg-pool",
-            "version": "3.11.0"
+            "version": "3.13.0"
           },
           {
             "name": "pg-protocol",
-            "version": "1.11.0"
+            "version": "1.13.0"
           },
           {
             "name": "pg-types",
@@ -2816,7 +2440,7 @@
           },
           {
             "name": "pump",
-            "version": "3.0.3"
+            "version": "3.0.4"
           },
           {
             "name": "punycode",
@@ -2901,10 +2525,6 @@
           {
             "name": "rimraf",
             "version": "3.0.2"
-          },
-          {
-            "name": "run-applescript",
-            "version": "7.1.0"
           },
           {
             "name": "safe-buffer",
@@ -3060,7 +2680,7 @@
           },
           {
             "name": "strnum",
-            "version": "2.1.2"
+            "version": "2.2.0"
           },
           {
             "name": "supports-preserve-symlinks-flag",
@@ -3100,11 +2720,11 @@
           },
           {
             "name": "tldts",
-            "version": "7.0.23"
+            "version": "7.0.24"
           },
           {
             "name": "tldts-core",
-            "version": "7.0.23"
+            "version": "7.0.24"
           },
           {
             "name": "toidentifier",
@@ -3132,7 +2752,7 @@
           },
           {
             "name": "underscore",
-            "version": "1.13.7"
+            "version": "1.13.8"
           },
           {
             "name": "undici",
@@ -3159,16 +2779,16 @@
             "version": "1.0.0"
           },
           {
-            "name": "update-language-files",
-            "version": "1.0.0"
-          },
-          {
             "name": "uptime-kuma",
-            "version": "2.1.3"
+            "version": "2.2.0"
           },
           {
             "name": "url-parse",
             "version": "1.5.10"
+          },
+          {
+            "name": "useless-module",
+            "version": "1.0.0"
           },
           {
             "name": "util-deprecate",
@@ -3177,10 +2797,6 @@
           {
             "name": "utils-merge",
             "version": "1.0.1"
-          },
-          {
-            "name": "uuid",
-            "version": "8.3.2"
           },
           {
             "name": "validator",
@@ -3233,10 +2849,6 @@
           {
             "name": "ws",
             "version": "7.5.10"
-          },
-          {
-            "name": "wsl-utils",
-            "version": "0.1.0"
           },
           {
             "name": "xml-js",
@@ -3294,12 +2906,12 @@
         "dotnet": 0,
         "go": 0,
         "java": 0,
-        "node": 600,
+        "node": 503,
         "php": 0,
         "python": 2,
         "ruby": 0,
         "rust": 0,
-        "total": 817
+        "total": 720
       }
     }
   }
