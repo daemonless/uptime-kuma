@@ -7,7 +7,6 @@ x-daemonless:
   description: "A fancy self-hosted monitoring tool on FreeBSD."
   upstream_url: "https://github.com/louislam/uptime-kuma"
   web_url: "https://uptime.kuma.pet/"
-  freshports_url: "https://www.freshports.org/net-mgmt/uptime-kuma/"
   user: "bsd"
   mlock: false
   raw_sockets: true
