@@ -4,13 +4,14 @@ x-daemonless:
   title: "Uptime Kuma"
   icon: ":material-chart-line:"
   category: "Utilities"
-  description: "A fancy self-hosted monitoring tool on FreeBSD."
+  description: "Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications."
   upstream_url: "https://github.com/louislam/uptime-kuma"
   web_url: "https://uptime.kuma.pet/"
   user: "bsd"
   mlock: false
   raw_sockets: true
-  
+  appjail: true
+
   docs:
     env:
       PUID: "User ID for the application process"

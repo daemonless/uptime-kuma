@@ -5,15 +5,27 @@ Source: dbuild templates
 
 # Uptime Kuma
 
-A fancy self-hosted monitoring tool on FreeBSD.
+[![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/uptime-kuma/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/uptime-kuma/actions)
+[![Last Commit](https://img.shields.io/github/last-commit/daemonless/uptime-kuma?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/uptime-kuma/commits)
+
+Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications.
 
 | | |
 |---|---|
 | **Port** | 3001 |
 | **Registry** | `ghcr.io/daemonless/uptime-kuma` |
-| **Docs** | [daemonless.io/images/uptime-kuma](https://daemonless.io/images/uptime-kuma/) |
 | **Source** | [https://github.com/louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) |
 | **Website** | [https://uptime.kuma.pet/](https://uptime.kuma.pet/) |
+
+## Version Tags
+
+| Tag | Description | Best For |
+| :--- | :--- | :--- |
+| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+
+## Prerequisites
+
+Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
 
@@ -33,10 +45,65 @@ services:
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
       - DATA_DIR=/config
     volumes:
-      - /path/to/containers/uptime-kuma:/config
+      - "/path/to/containers/uptime-kuma:/config"
     ports:
       - 3001:3001
+    annotations:
+      org.freebsd.jail.allow.raw_sockets: "true"
     restart: unless-stopped
+```
+
+### AppJail Director
+
+**.env**:
+
+```
+DIRECTOR_PROJECT=uptime-kuma
+PUID=1000
+PGID=1000
+TZ=UTC
+UPTIME_KUMA_IS_CONTAINER=1
+UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+DATA_DIR=/config
+```
+
+**appjail-director.yml**:
+
+```yaml
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  uptime-kuma:
+    name: uptime_kuma
+    options:
+      - container: 'boot args:--pull'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+        - UPTIME_KUMA_IS_CONTAINER: !ENV '${UPTIME_KUMA_IS_CONTAINER}'
+        - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: !ENV '${UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC}'
+        - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: !ENV '${PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD}'
+        - DATA_DIR: !ENV '${DATA_DIR}'
+    volumes:
+      - uptime-kuma: /config
+volumes:
+  uptime-kuma:
+    device: '/path/to/containers/uptime-kuma'
+```
+
+**Makejail**:
+
+```
+ARG tag=latest
+
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/uptime-kuma:${tag}
+SET allow.raw_sockets=1
 ```
 
 ### Podman CLI
@@ -45,9 +112,9 @@ services:
 podman run -d --name uptime-kuma \
   -p 3001:3001 \
   --annotation 'org.freebsd.jail.allow.raw_sockets=true' \
-  -e PUID=@PUID@ \
-  -e PGID=@PGID@ \
-  -e TZ=@TZ@ \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
   -e UPTIME_KUMA_IS_CONTAINER=1 \
   -e UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
   -e PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
@@ -55,7 +122,6 @@ podman run -d --name uptime-kuma \
   -v /path/to/containers/uptime-kuma:/config \
   ghcr.io/daemonless/uptime-kuma:latest
 ```
-Access at: `http://localhost:3001`
 
 ### Ansible
 
@@ -67,9 +133,9 @@ Access at: `http://localhost:3001`
     state: started
     restart_policy: always
     env:
-      PUID: "@PUID@"
-      PGID: "@PGID@"
-      TZ: "@TZ@"
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
       UPTIME_KUMA_IS_CONTAINER: "1"
       UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: "1"
       PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
@@ -78,9 +144,14 @@ Access at: `http://localhost:3001`
       - "3001:3001"
     volumes:
       - "/path/to/containers/uptime-kuma:/config"
+    annotation:
+      org.freebsd.jail.allow.raw_sockets: "true"
 ```
 
-## Configuration
+Access at: `http://localhost:3001`
+
+## Parameters
+
 ### Environment Variables
 
 | Variable | Default | Description |
@@ -92,19 +163,23 @@ Access at: `http://localhost:3001`
 | `UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC` | `1` |  |
 | `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD` | `1` |  |
 | `DATA_DIR` | `/config` |  |
+
 ### Volumes
 
 | Path | Description |
 |------|-------------|
 | `/config` | Data directory (database, settings) |
+
 ### Ports
 
 | Port | Protocol | Description |
 |------|----------|-------------|
 | `3001` | TCP | Web UI |
 
-## Notes
+**Architectures:** amd64
+**User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
+**Base:** FreeBSD 15.0
 
-- **Architectures:** amd64
-- **User:** `bsd` (UID/GID set via PUID/PGID)
-- **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)
+---
+
+Need help? Join our [Discord](https://discord.gg/Kb9tkhecZT) community.

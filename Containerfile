@@ -48,7 +48,7 @@ ENV HEALTHCHECK_URL="${HEALTHCHECK_ENDPOINT}"
 
 # --- Metadata (Injected by Generator) ---
 LABEL org.opencontainers.image.title="Uptime Kuma" \
-      org.opencontainers.image.description="A fancy self-hosted monitoring tool on FreeBSD." \
+      org.opencontainers.image.description="Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications." \
       org.opencontainers.image.source="https://github.com/daemonless/uptime-kuma" \
       org.opencontainers.image.url="https://uptime.kuma.pet/" \
       org.opencontainers.image.documentation="https://github.com/louislam/uptime-kuma/wiki" \
