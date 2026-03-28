@@ -10,6 +10,7 @@ Source: dbuild templates
 
 Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications.
 
+
 | | |
 |---|---|
 | **Port** | 3001 |
