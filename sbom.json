@@ -1,12 +1,12 @@
 {
   "image": "uptime-kuma",
-  "generated": "2026-03-20T11:26:47Z",
+  "generated": "2026-03-28T16:52:06Z",
   "tags": {
     "latest": {
       "arch": "amd64",
       "app_version": "2.2.1",
       "source": "upstream",
-      "generated": "2026-03-20T11:26:30Z",
+      "generated": "2026-03-28T16:51:45Z",
       "packages": {
         "freebsd": [
           {
@@ -166,12 +166,16 @@
             "version": "1.34.6"
           },
           {
+            "name": "ca_root_nss",
+            "version": "3.117_2"
+          },
+          {
             "name": "cairo",
             "version": "1.18.2,3"
           },
           {
             "name": "chromium",
-            "version": "145.0.7632.159"
+            "version": "146.0.7680.164_1"
           },
           {
             "name": "colord",
@@ -3286,7 +3290,7 @@
         "rust": []
       },
       "summary": {
-        "freebsd": 215,
+        "freebsd": 216,
         "dotnet": 0,
         "go": 0,
         "java": 0,
@@ -3295,7 +3299,7 @@
         "python": 2,
         "ruby": 0,
         "rust": 0,
-        "total": 816
+        "total": 817
       }
     }
   }
