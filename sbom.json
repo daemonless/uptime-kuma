@@ -1,13 +1,13 @@
 {
+  "generated": "2026-04-14T19:48:08Z",
   "image": "uptime-kuma",
-  "generated": "2026-03-28T16:52:06Z",
   "tags": {
     "latest": {
-      "arch": "amd64",
       "app_version": "2.2.1",
-      "source": "upstream",
-      "generated": "2026-03-28T16:51:45Z",
+      "arch": "amd64",
+      "generated": "2026-04-14T19:46:49Z",
       "packages": {
+        "dotnet": [],
         "freebsd": [
           {
             "name": "FreeBSD-audit-lib",
@@ -143,7 +143,7 @@
           },
           {
             "name": "alsa-lib",
-            "version": "1.2.14"
+            "version": "1.2.15.3"
           },
           {
             "name": "alsa-plugins",
@@ -151,7 +151,7 @@
           },
           {
             "name": "at-spi2-core",
-            "version": "2.56.7"
+            "version": "2.56.8"
           },
           {
             "name": "avahi-app",
@@ -175,11 +175,11 @@
           },
           {
             "name": "chromium",
-            "version": "146.0.7680.164_1"
+            "version": "146.0.7680.177"
           },
           {
             "name": "colord",
-            "version": "1.4.8"
+            "version": "1.4.8_1"
           },
           {
             "name": "consolekit2",
@@ -187,7 +187,7 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.5"
+            "version": "0.34.6"
           },
           {
             "name": "cups",
@@ -195,7 +195,7 @@
           },
           {
             "name": "dav1d",
-            "version": "1.5.3"
+            "version": "1.5.3_1"
           },
           {
             "name": "dbus",
@@ -223,7 +223,7 @@
           },
           {
             "name": "ebur128",
-            "version": "0.1.10_10"
+            "version": "0.1.10_12"
           },
           {
             "name": "espeak-ng",
@@ -235,7 +235,7 @@
           },
           {
             "name": "expat",
-            "version": "2.7.4"
+            "version": "2.7.5"
           },
           {
             "name": "fftw3",
@@ -255,7 +255,7 @@
           },
           {
             "name": "freetype2",
-            "version": "2.14.1"
+            "version": "2.14.3"
           },
           {
             "name": "fribidi",
@@ -271,7 +271,7 @@
           },
           {
             "name": "gettext-runtime",
-            "version": "0.26"
+            "version": "1.0"
           },
           {
             "name": "giflib",
@@ -307,11 +307,11 @@
           },
           {
             "name": "gstreamer1",
-            "version": "1.26.10"
+            "version": "1.28.1_1"
           },
           {
             "name": "gstreamer1-plugins",
-            "version": "1.26.10"
+            "version": "1.28.1"
           },
           {
             "name": "gtk-update-icon-cache",
@@ -319,15 +319,15 @@
           },
           {
             "name": "gtk3",
-            "version": "3.24.51"
+            "version": "3.24.52"
           },
           {
             "name": "harfbuzz",
-            "version": "12.3.0"
+            "version": "13.2.1"
           },
           {
             "name": "harfbuzz-icu",
-            "version": "12.3.0"
+            "version": "13.2.1"
           },
           {
             "name": "hicolor-icon-theme",
@@ -335,7 +335,7 @@
           },
           {
             "name": "hwdata",
-            "version": "0.403,1"
+            "version": "0.405,1"
           },
           {
             "name": "icu",
@@ -347,7 +347,7 @@
           },
           {
             "name": "iso-codes",
-            "version": "4.19.0"
+            "version": "4.20.1"
           },
           {
             "name": "jackit",
@@ -379,7 +379,7 @@
           },
           {
             "name": "lcms2",
-            "version": "2.17"
+            "version": "2.18"
           },
           {
             "name": "lerc",
@@ -395,7 +395,7 @@
           },
           {
             "name": "libX11",
-            "version": "1.8.12,1"
+            "version": "1.8.13,1"
           },
           {
             "name": "libXScrnSaver",
@@ -466,6 +466,10 @@
             "version": "1.1.6"
           },
           {
+            "name": "libada",
+            "version": "3.4.4"
+          },
+          {
             "name": "libdaemon",
             "version": "0.14_1"
           },
@@ -511,11 +515,11 @@
           },
           {
             "name": "libfontenc",
-            "version": "1.1.8"
+            "version": "1.1.9"
           },
           {
             "name": "libgcrypt",
-            "version": "1.11.2"
+            "version": "1.12.0_1"
           },
           {
             "name": "libglvnd",
@@ -523,7 +527,7 @@
           },
           {
             "name": "libgpg-error",
-            "version": "1.58"
+            "version": "1.59"
           },
           {
             "name": "libgudev",
@@ -555,11 +559,11 @@
           },
           {
             "name": "libnghttp3",
-            "version": "1.14.0"
+            "version": "1.15.0"
           },
           {
             "name": "libngtcp2",
-            "version": "1.19.0"
+            "version": "1.21.0"
           },
           {
             "name": "libogg",
@@ -579,7 +583,7 @@
           },
           {
             "name": "librsvg2-rust",
-            "version": "2.61.3"
+            "version": "2.62.0_1"
           },
           {
             "name": "libsamplerate",
@@ -615,7 +619,7 @@
           },
           {
             "name": "libunistring",
-            "version": "1.4.1"
+            "version": "1.4.2"
           },
           {
             "name": "libunwind",
@@ -623,7 +627,7 @@
           },
           {
             "name": "libuv",
-            "version": "1.51.0"
+            "version": "1.52.0"
           },
           {
             "name": "libvorbis",
@@ -651,7 +655,7 @@
           },
           {
             "name": "llhttp",
-            "version": "9.3.0"
+            "version": "9.3.1"
           },
           {
             "name": "lzo2",
@@ -679,7 +683,7 @@
           },
           {
             "name": "node22",
-            "version": "22.22.0"
+            "version": "22.22.2"
           },
           {
             "name": "noto-basic",
@@ -711,7 +715,7 @@
           },
           {
             "name": "nss",
-            "version": "3.121"
+            "version": "3.122"
           },
           {
             "name": "oniguruma",
@@ -723,11 +727,11 @@
           },
           {
             "name": "opus",
-            "version": "1.6"
+            "version": "1.6.1"
           },
           {
             "name": "orc",
-            "version": "0.4.41_1"
+            "version": "0.4.42"
           },
           {
             "name": "p11-kit",
@@ -735,7 +739,7 @@
           },
           {
             "name": "pango",
-            "version": "1.56.4"
+            "version": "1.56.4_1"
           },
           {
             "name": "pcaudiolib",
@@ -743,7 +747,7 @@
           },
           {
             "name": "pciids",
-            "version": "20251223"
+            "version": "20260309"
           },
           {
             "name": "pcre2",
@@ -751,7 +755,7 @@
           },
           {
             "name": "pipewire",
-            "version": "1.4.9"
+            "version": "1.6.2"
           },
           {
             "name": "pixman",
@@ -759,11 +763,11 @@
           },
           {
             "name": "pkg",
-            "version": "2.5.1"
+            "version": "2.6.2_1"
           },
           {
             "name": "png",
-            "version": "1.6.53"
+            "version": "1.6.55"
           },
           {
             "name": "polkit",
@@ -775,15 +779,27 @@
           },
           {
             "name": "py311-dbus",
-            "version": "1.3.2_1"
+            "version": "1.4.0"
           },
           {
             "name": "py311-packaging",
-            "version": "25.0"
+            "version": "26.0"
+          },
+          {
+            "name": "py311-pycairo",
+            "version": "1.29.0"
+          },
+          {
+            "name": "py311-pygobject",
+            "version": "3.54.5_1"
+          },
+          {
+            "name": "pygobject-common",
+            "version": "3.54.5_1"
           },
           {
             "name": "python311",
-            "version": "3.11.15"
+            "version": "3.11.15_1"
           },
           {
             "name": "re2",
@@ -798,16 +814,12 @@
             "version": "2.13.2.0"
           },
           {
-            "name": "s6-rc",
-            "version": "0.5.6.0"
-          },
-          {
             "name": "shared-mime-info",
             "version": "2.4_2"
           },
           {
             "name": "simdjson",
-            "version": "4.2.4"
+            "version": "4.5.0"
           },
           {
             "name": "skalibs",
@@ -819,7 +831,7 @@
           },
           {
             "name": "speech-dispatcher",
-            "version": "0.12.1"
+            "version": "0.12.1_1"
           },
           {
             "name": "speex",
@@ -836,6 +848,10 @@
           {
             "name": "tiff",
             "version": "4.7.1"
+          },
+          {
+            "name": "uvwasi",
+            "version": "0.0.23"
           },
           {
             "name": "wayland",
@@ -874,7 +890,6 @@
             "version": "1.5.7_1"
           }
         ],
-        "dotnet": [],
         "go": [],
         "java": [],
         "node": [
@@ -1792,7 +1807,7 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.5"
+            "version": "0.34.6"
           },
           {
             "name": "cors",
@@ -3278,28 +3293,37 @@
         "php": [],
         "python": [
           {
+            "name": "PyGObject",
+            "version": "3.54.5"
+          },
+          {
             "name": "example",
             "version": "21.12"
           },
           {
             "name": "packaging",
-            "version": "25.0"
+            "version": "26.0"
+          },
+          {
+            "name": "pycairo",
+            "version": "1.29.0"
           }
         ],
         "ruby": [],
         "rust": []
       },
+      "source": "upstream",
       "summary": {
-        "freebsd": 216,
         "dotnet": 0,
+        "freebsd": 220,
         "go": 0,
         "java": 0,
         "node": 599,
         "php": 0,
-        "python": 2,
+        "python": 4,
         "ruby": 0,
         "rust": 0,
-        "total": 817
+        "total": 823
       }
     }
   }
