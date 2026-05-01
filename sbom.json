@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-26T23:41:43Z",
+  "generated": "2026-05-01T07:48:44Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
-      "app_version": "2.2.1",
+      "app_version": "2.3.0",
       "arch": "amd64",
-      "generated": "2026-04-26T23:40:28Z",
+      "generated": "2026-05-01T07:47:21Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -191,7 +191,7 @@
           },
           {
             "name": "cups",
-            "version": "2.4.16"
+            "version": "2.4.18"
           },
           {
             "name": "dav1d",
@@ -379,7 +379,7 @@
           },
           {
             "name": "lcms2",
-            "version": "2.18"
+            "version": "2.19"
           },
           {
             "name": "lerc",
@@ -715,7 +715,7 @@
           },
           {
             "name": "nss",
-            "version": "3.123"
+            "version": "3.123.1"
           },
           {
             "name": "oniguruma",
@@ -911,87 +911,99 @@
           },
           {
             "name": "@aws-sdk/client-cognito-identity",
-            "version": "3.1005.0"
+            "version": "3.1040.0"
           },
           {
             "name": "@aws-sdk/core",
-            "version": "3.973.19"
+            "version": "3.974.7"
           },
           {
             "name": "@aws-sdk/credential-provider-cognito-identity",
-            "version": "3.972.11"
+            "version": "3.972.30"
           },
           {
             "name": "@aws-sdk/credential-provider-env",
-            "version": "3.972.17"
+            "version": "3.972.33"
           },
           {
             "name": "@aws-sdk/credential-provider-http",
-            "version": "3.972.19"
+            "version": "3.972.35"
           },
           {
             "name": "@aws-sdk/credential-provider-ini",
-            "version": "3.972.18"
+            "version": "3.972.37"
           },
           {
             "name": "@aws-sdk/credential-provider-login",
-            "version": "3.972.18"
+            "version": "3.972.37"
           },
           {
             "name": "@aws-sdk/credential-provider-node",
-            "version": "3.972.19"
+            "version": "3.972.38"
           },
           {
             "name": "@aws-sdk/credential-provider-process",
-            "version": "3.972.17"
+            "version": "3.972.33"
           },
           {
             "name": "@aws-sdk/credential-provider-sso",
-            "version": "3.972.18"
+            "version": "3.972.37"
           },
           {
             "name": "@aws-sdk/credential-provider-web-identity",
-            "version": "3.972.18"
+            "version": "3.972.37"
           },
           {
             "name": "@aws-sdk/credential-providers",
-            "version": "3.1005.0"
+            "version": "3.1040.0"
           },
           {
             "name": "@aws-sdk/middleware-host-header",
-            "version": "3.972.7"
+            "version": "3.972.10"
           },
           {
             "name": "@aws-sdk/middleware-logger",
-            "version": "3.972.7"
+            "version": "3.972.10"
           },
           {
             "name": "@aws-sdk/middleware-recursion-detection",
-            "version": "3.972.7"
+            "version": "3.972.11"
+          },
+          {
+            "name": "@aws-sdk/middleware-sdk-s3",
+            "version": "3.972.36"
           },
           {
             "name": "@aws-sdk/middleware-user-agent",
-            "version": "3.972.20"
+            "version": "3.972.37"
           },
           {
             "name": "@aws-sdk/nested-clients",
-            "version": "3.996.8"
+            "version": "3.997.5"
           },
           {
             "name": "@aws-sdk/region-config-resolver",
-            "version": "3.972.7"
+            "version": "3.972.13"
+          },
+          {
+            "name": "@aws-sdk/signature-v4-multi-region",
+            "version": "3.996.24"
           },
           {
             "name": "@aws-sdk/token-providers",
-            "version": "3.1005.0"
+            "version": "3.1039.0"
           },
           {
             "name": "@aws-sdk/types",
-            "version": "3.973.5"
+            "version": "3.973.8"
+          },
+          {
+            "name": "@aws-sdk/util-arn-parser",
+            "version": "3.972.3"
           },
           {
             "name": "@aws-sdk/util-endpoints",
-            "version": "3.996.4"
+            "version": "3.996.8"
           },
           {
             "name": "@aws-sdk/util-locate-window",
@@ -999,23 +1011,23 @@
           },
           {
             "name": "@aws-sdk/util-user-agent-browser",
-            "version": "3.972.7"
-          },
-          {
-            "name": "@aws-sdk/util-user-agent-node",
-            "version": "3.973.5"
-          },
-          {
-            "name": "@aws-sdk/xml-builder",
             "version": "3.972.10"
           },
           {
+            "name": "@aws-sdk/util-user-agent-node",
+            "version": "3.973.23"
+          },
+          {
+            "name": "@aws-sdk/xml-builder",
+            "version": "3.972.22"
+          },
+          {
             "name": "@aws/lambda-invoke-store",
-            "version": "0.2.3"
+            "version": "0.2.4"
           },
           {
             "name": "@azure-rest/core-client",
-            "version": "2.5.1"
+            "version": "2.6.0"
           },
           {
             "name": "@azure/abort-controller",
@@ -1031,7 +1043,7 @@
           },
           {
             "name": "@azure/core-http-compat",
-            "version": "2.3.2"
+            "version": "2.4.0"
           },
           {
             "name": "@azure/core-lro",
@@ -1055,11 +1067,11 @@
           },
           {
             "name": "@azure/identity",
-            "version": "4.13.0"
+            "version": "4.13.1"
           },
           {
             "name": "@azure/keyvault-common",
-            "version": "2.0.0"
+            "version": "2.1.0"
           },
           {
             "name": "@azure/keyvault-keys",
@@ -1071,15 +1083,15 @@
           },
           {
             "name": "@azure/msal-browser",
-            "version": "4.29.0"
+            "version": "5.9.0"
           },
           {
             "name": "@azure/msal-common",
-            "version": "15.15.0"
+            "version": "16.5.2"
           },
           {
             "name": "@azure/msal-node",
-            "version": "3.8.8"
+            "version": "5.1.5"
           },
           {
             "name": "@gar/promisify",
@@ -1119,7 +1131,7 @@
           },
           {
             "name": "@mongodb-js/saslprep",
-            "version": "1.4.6"
+            "version": "1.4.10"
           },
           {
             "name": "@my-scope/package-a",
@@ -1140,6 +1152,10 @@
           {
             "name": "@noble/hashes",
             "version": "1.3.1"
+          },
+          {
+            "name": "@nodable/entities",
+            "version": "2.1.0"
           },
           {
             "name": "@npmcli/fs",
@@ -1163,7 +1179,7 @@
           },
           {
             "name": "@protobufjs/codegen",
-            "version": "2.0.4"
+            "version": "2.0.5"
           },
           {
             "name": "@protobufjs/eventemitter",
@@ -1179,7 +1195,7 @@
           },
           {
             "name": "@protobufjs/inquire",
-            "version": "1.1.0"
+            "version": "1.1.1"
           },
           {
             "name": "@protobufjs/path",
@@ -1191,7 +1207,7 @@
           },
           {
             "name": "@protobufjs/utf8",
-            "version": "1.1.0"
+            "version": "1.1.1"
           },
           {
             "name": "@redis/bloom",
@@ -1230,32 +1246,28 @@
             "version": "5.6.0"
           },
           {
-            "name": "@smithy/abort-controller",
-            "version": "4.2.11"
-          },
-          {
             "name": "@smithy/config-resolver",
-            "version": "4.4.10"
+            "version": "4.4.17"
           },
           {
             "name": "@smithy/core",
-            "version": "3.23.9"
+            "version": "3.23.17"
           },
           {
             "name": "@smithy/credential-provider-imds",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/fetch-http-handler",
-            "version": "5.3.13"
+            "version": "5.3.17"
           },
           {
             "name": "@smithy/hash-node",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/invalid-dependency",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/is-array-buffer",
@@ -1263,71 +1275,71 @@
           },
           {
             "name": "@smithy/middleware-content-length",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/middleware-endpoint",
-            "version": "4.4.23"
+            "version": "4.4.32"
           },
           {
             "name": "@smithy/middleware-retry",
-            "version": "4.4.40"
+            "version": "4.5.7"
           },
           {
             "name": "@smithy/middleware-serde",
-            "version": "4.2.12"
+            "version": "4.2.20"
           },
           {
             "name": "@smithy/middleware-stack",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/node-config-provider",
-            "version": "4.3.11"
+            "version": "4.3.14"
           },
           {
             "name": "@smithy/node-http-handler",
-            "version": "4.4.14"
+            "version": "4.6.1"
           },
           {
             "name": "@smithy/property-provider",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/protocol-http",
-            "version": "5.3.11"
+            "version": "5.3.14"
           },
           {
             "name": "@smithy/querystring-builder",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/querystring-parser",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/service-error-classification",
-            "version": "4.2.11"
+            "version": "4.3.1"
           },
           {
             "name": "@smithy/shared-ini-file-loader",
-            "version": "4.4.6"
+            "version": "4.4.9"
           },
           {
             "name": "@smithy/signature-v4",
-            "version": "5.3.11"
+            "version": "5.3.14"
           },
           {
             "name": "@smithy/smithy-client",
-            "version": "4.12.3"
+            "version": "4.12.13"
           },
           {
             "name": "@smithy/types",
-            "version": "4.13.0"
+            "version": "4.14.1"
           },
           {
             "name": "@smithy/url-parser",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/util-base64",
@@ -1351,15 +1363,15 @@
           },
           {
             "name": "@smithy/util-defaults-mode-browser",
-            "version": "4.3.39"
+            "version": "4.3.49"
           },
           {
             "name": "@smithy/util-defaults-mode-node",
-            "version": "4.2.42"
+            "version": "4.2.54"
           },
           {
             "name": "@smithy/util-endpoints",
-            "version": "3.3.2"
+            "version": "3.4.2"
           },
           {
             "name": "@smithy/util-hex-encoding",
@@ -1367,15 +1379,15 @@
           },
           {
             "name": "@smithy/util-middleware",
-            "version": "4.2.11"
+            "version": "4.2.14"
           },
           {
             "name": "@smithy/util-retry",
-            "version": "4.2.11"
+            "version": "4.3.6"
           },
           {
             "name": "@smithy/util-stream",
-            "version": "4.5.17"
+            "version": "4.5.25"
           },
           {
             "name": "@smithy/util-uri-escape",
@@ -1467,7 +1479,7 @@
           },
           {
             "name": "@types/node",
-            "version": "20.19.37"
+            "version": "20.19.39"
           },
           {
             "name": "@types/qs",
@@ -1498,8 +1510,12 @@
             "version": "8.2.2"
           },
           {
+            "name": "@types/ws",
+            "version": "8.18.1"
+          },
+          {
             "name": "@typespec/ts-http-runtime",
-            "version": "0.3.4"
+            "version": "0.3.5"
           },
           {
             "name": "@vvo/tzdb",
@@ -1631,7 +1647,7 @@
           },
           {
             "name": "body-parser",
-            "version": "1.20.4"
+            "version": "1.20.5"
           },
           {
             "name": "boolbase",
@@ -1643,7 +1659,7 @@
           },
           {
             "name": "brace-expansion",
-            "version": "1.1.12"
+            "version": "1.1.14"
           },
           {
             "name": "bson",
@@ -1843,7 +1859,7 @@
           },
           {
             "name": "dayjs",
-            "version": "1.11.19"
+            "version": "1.11.20"
           },
           {
             "name": "debug",
@@ -1963,7 +1979,7 @@
           },
           {
             "name": "engine.io",
-            "version": "6.6.5"
+            "version": "6.6.7"
           },
           {
             "name": "engine.io-client",
@@ -2043,7 +2059,7 @@
           },
           {
             "name": "fast-xml-builder",
-            "version": "1.0.0"
+            "version": "1.1.5"
           },
           {
             "name": "fast-xml-parser",
@@ -2059,7 +2075,7 @@
           },
           {
             "name": "follow-redirects",
-            "version": "1.15.11"
+            "version": "1.16.0"
           },
           {
             "name": "foreground-child",
@@ -2167,7 +2183,7 @@
           },
           {
             "name": "hasown",
-            "version": "2.0.2"
+            "version": "2.0.3"
           },
           {
             "name": "help-me",
@@ -2251,7 +2267,7 @@
           },
           {
             "name": "ip-address",
-            "version": "10.1.0"
+            "version": "10.1.1"
           },
           {
             "name": "ipaddr.js",
@@ -2375,7 +2391,7 @@
           },
           {
             "name": "liquidjs",
-            "version": "10.25.0"
+            "version": "10.25.7"
           },
           {
             "name": "ljharb-monorepo-symlink-test",
@@ -2511,7 +2527,7 @@
           },
           {
             "name": "minipass-flush",
-            "version": "1.0.5"
+            "version": "1.0.7"
           },
           {
             "name": "minipass-pipeline",
@@ -2571,7 +2587,7 @@
           },
           {
             "name": "nanoid",
-            "version": "3.3.11"
+            "version": "3.3.12"
           },
           {
             "name": "native-duplexpair",
@@ -2587,7 +2603,7 @@
           },
           {
             "name": "net-snmp",
-            "version": "3.26.1"
+            "version": "3.26.3"
           },
           {
             "name": "node-addon-api",
@@ -2686,6 +2702,10 @@
             "version": "5.7.1"
           },
           {
+            "name": "oracledb",
+            "version": "6.10.0"
+          },
+          {
             "name": "p-cancelable",
             "version": "3.0.0"
           },
@@ -2714,6 +2734,10 @@
             "version": "1.2.2"
           },
           {
+            "name": "path-expression-matcher",
+            "version": "1.5.0"
+          },
+          {
             "name": "path-is-absolute",
             "version": "1.0.1"
           },
@@ -2731,7 +2755,7 @@
           },
           {
             "name": "path-to-regexp",
-            "version": "0.1.12"
+            "version": "0.1.13"
           },
           {
             "name": "pg",
@@ -2895,7 +2919,7 @@
           },
           {
             "name": "resolve",
-            "version": "1.22.11"
+            "version": "1.22.12"
           },
           {
             "name": "resolve-alpn",
@@ -2979,7 +3003,7 @@
           },
           {
             "name": "side-channel-list",
-            "version": "1.0.0"
+            "version": "1.0.1"
           },
           {
             "name": "side-channel-map",
@@ -3019,11 +3043,11 @@
           },
           {
             "name": "socket.io-parser",
-            "version": "4.2.5"
+            "version": "4.2.6"
           },
           {
             "name": "socks",
-            "version": "2.8.7"
+            "version": "2.8.8"
           },
           {
             "name": "socks-proxy-agent",
@@ -3079,7 +3103,7 @@
           },
           {
             "name": "strnum",
-            "version": "2.2.0"
+            "version": "2.2.3"
           },
           {
             "name": "supports-preserve-symlinks-flag",
@@ -3119,11 +3143,11 @@
           },
           {
             "name": "tldts",
-            "version": "7.0.25"
+            "version": "7.0.29"
           },
           {
             "name": "tldts-core",
-            "version": "7.0.25"
+            "version": "7.0.29"
           },
           {
             "name": "toidentifier",
@@ -3155,7 +3179,7 @@
           },
           {
             "name": "undici",
-            "version": "6.23.0"
+            "version": "6.25.0"
           },
           {
             "name": "undici-types",
@@ -3179,7 +3203,7 @@
           },
           {
             "name": "uptime-kuma",
-            "version": "2.2.1"
+            "version": "2.3.0"
           },
           {
             "name": "url-parse",
@@ -3194,12 +3218,8 @@
             "version": "1.0.1"
           },
           {
-            "name": "uuid",
-            "version": "8.3.2"
-          },
-          {
             "name": "validator",
-            "version": "13.15.26"
+            "version": "13.15.35"
           },
           {
             "name": "varint",
@@ -3318,12 +3338,12 @@
         "freebsd": 220,
         "go": 0,
         "java": 0,
-        "node": 599,
+        "node": 604,
         "php": 0,
         "python": 4,
         "ruby": 0,
         "rust": 0,
-        "total": 823
+        "total": 828
       }
     }
   }
