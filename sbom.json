@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-03T15:59:36Z",
+  "generated": "2026-05-03T20:04:22Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
-      "app_version": "2.3.1",
+      "app_version": "2.3.2",
       "arch": "amd64",
-      "generated": "2026-05-03T15:58:14Z",
+      "generated": "2026-05-03T20:03:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -3203,7 +3203,7 @@
           },
           {
             "name": "uptime-kuma",
-            "version": "2.3.1"
+            "version": "2.3.2"
           },
           {
             "name": "url-parse",
