@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-01T07:48:44Z",
+  "generated": "2026-05-03T15:59:36Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
-      "app_version": "2.3.0",
+      "app_version": "2.3.1",
       "arch": "amd64",
-      "generated": "2026-05-01T07:47:21Z",
+      "generated": "2026-05-03T15:58:14Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -911,51 +911,51 @@
           },
           {
             "name": "@aws-sdk/client-cognito-identity",
-            "version": "3.1040.0"
+            "version": "3.1041.0"
           },
           {
             "name": "@aws-sdk/core",
-            "version": "3.974.7"
+            "version": "3.974.8"
           },
           {
             "name": "@aws-sdk/credential-provider-cognito-identity",
-            "version": "3.972.30"
+            "version": "3.972.31"
           },
           {
             "name": "@aws-sdk/credential-provider-env",
-            "version": "3.972.33"
+            "version": "3.972.34"
           },
           {
             "name": "@aws-sdk/credential-provider-http",
-            "version": "3.972.35"
+            "version": "3.972.36"
           },
           {
             "name": "@aws-sdk/credential-provider-ini",
-            "version": "3.972.37"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-login",
-            "version": "3.972.37"
-          },
-          {
-            "name": "@aws-sdk/credential-provider-node",
             "version": "3.972.38"
           },
           {
+            "name": "@aws-sdk/credential-provider-login",
+            "version": "3.972.38"
+          },
+          {
+            "name": "@aws-sdk/credential-provider-node",
+            "version": "3.972.39"
+          },
+          {
             "name": "@aws-sdk/credential-provider-process",
-            "version": "3.972.33"
+            "version": "3.972.34"
           },
           {
             "name": "@aws-sdk/credential-provider-sso",
-            "version": "3.972.37"
+            "version": "3.972.38"
           },
           {
             "name": "@aws-sdk/credential-provider-web-identity",
-            "version": "3.972.37"
+            "version": "3.972.38"
           },
           {
             "name": "@aws-sdk/credential-providers",
-            "version": "3.1040.0"
+            "version": "3.1041.0"
           },
           {
             "name": "@aws-sdk/middleware-host-header",
@@ -971,15 +971,15 @@
           },
           {
             "name": "@aws-sdk/middleware-sdk-s3",
-            "version": "3.972.36"
-          },
-          {
-            "name": "@aws-sdk/middleware-user-agent",
             "version": "3.972.37"
           },
           {
+            "name": "@aws-sdk/middleware-user-agent",
+            "version": "3.972.38"
+          },
+          {
             "name": "@aws-sdk/nested-clients",
-            "version": "3.997.5"
+            "version": "3.997.6"
           },
           {
             "name": "@aws-sdk/region-config-resolver",
@@ -987,11 +987,11 @@
           },
           {
             "name": "@aws-sdk/signature-v4-multi-region",
-            "version": "3.996.24"
+            "version": "3.996.25"
           },
           {
             "name": "@aws-sdk/token-providers",
-            "version": "3.1039.0"
+            "version": "3.1041.0"
           },
           {
             "name": "@aws-sdk/types",
@@ -1015,7 +1015,7 @@
           },
           {
             "name": "@aws-sdk/util-user-agent-node",
-            "version": "3.973.23"
+            "version": "3.973.24"
           },
           {
             "name": "@aws-sdk/xml-builder",
@@ -1383,7 +1383,7 @@
           },
           {
             "name": "@smithy/util-retry",
-            "version": "4.3.6"
+            "version": "4.3.8"
           },
           {
             "name": "@smithy/util-stream",
@@ -1599,7 +1599,7 @@
           },
           {
             "name": "axios",
-            "version": "0.30.3"
+            "version": "0.31.1"
           },
           {
             "name": "badge-maker",
@@ -2267,7 +2267,7 @@
           },
           {
             "name": "ip-address",
-            "version": "10.1.1"
+            "version": "10.2.0"
           },
           {
             "name": "ipaddr.js",
@@ -3143,11 +3143,11 @@
           },
           {
             "name": "tldts",
-            "version": "7.0.29"
+            "version": "7.0.30"
           },
           {
             "name": "tldts-core",
-            "version": "7.0.29"
+            "version": "7.0.30"
           },
           {
             "name": "toidentifier",
@@ -3203,7 +3203,7 @@
           },
           {
             "name": "uptime-kuma",
-            "version": "2.3.0"
+            "version": "2.3.1"
           },
           {
             "name": "url-parse",
