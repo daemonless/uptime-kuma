@@ -10,7 +10,6 @@ Source: dbuild templates
 
 Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications.
 
-
 | | |
 |---|---|
 | **Port** | 3001 |
@@ -148,8 +147,6 @@ podman run -d --name uptime-kuma \
     annotation:
       org.freebsd.jail.allow.raw_sockets: "true"
 ```
-
-Access at: `http://localhost:3001`
 
 ## Parameters
 

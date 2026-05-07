@@ -7,7 +7,7 @@
 # Uptime Kuma - Self-hosted monitoring tool
 # Multi-stage build: compile with npm, run with node + chromium
 
-ARG BASE_VERSION=15
+ARG BASE_VERSION=15-latest
 FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
 
 # Build dependencies (including C compiler for native modules like sqlite3)
