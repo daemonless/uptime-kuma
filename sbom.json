@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-03T20:04:22Z",
+  "generated": "2026-05-07T13:51:45Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.3.2",
       "arch": "amd64",
-      "generated": "2026-05-03T20:03:01Z",
+      "generated": "2026-05-07T13:48:51Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -99,7 +99,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0p6"
+            "version": "15.0p8"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -127,7 +127,7 @@
           },
           {
             "name": "FreeBSD-zoneinfo",
-            "version": "15.0"
+            "version": "15.0p7"
           },
           {
             "name": "abseil",
@@ -151,7 +151,7 @@
           },
           {
             "name": "at-spi2-core",
-            "version": "2.56.8"
+            "version": "2.60.1"
           },
           {
             "name": "avahi-app",
@@ -175,11 +175,11 @@
           },
           {
             "name": "chromium",
-            "version": "147.0.7727.101"
+            "version": "147.0.7727.101_1"
           },
           {
             "name": "colord",
-            "version": "1.4.8_1"
+            "version": "1.4.8_2"
           },
           {
             "name": "consolekit2",
@@ -187,11 +187,11 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.6"
+            "version": "0.34.7"
           },
           {
             "name": "cups",
-            "version": "2.4.18"
+            "version": "2.4.19"
           },
           {
             "name": "dav1d",
@@ -223,7 +223,7 @@
           },
           {
             "name": "ebur128",
-            "version": "0.1.10_12"
+            "version": "0.1.10_13"
           },
           {
             "name": "espeak-ng",
@@ -235,7 +235,7 @@
           },
           {
             "name": "expat",
-            "version": "2.7.5"
+            "version": "2.8.0"
           },
           {
             "name": "fftw3",
@@ -279,7 +279,7 @@
           },
           {
             "name": "glib",
-            "version": "2.84.4,2"
+            "version": "2.86.4,2"
           },
           {
             "name": "gmp",
@@ -291,11 +291,11 @@
           },
           {
             "name": "gnutls",
-            "version": "3.8.12"
+            "version": "3.8.13"
           },
           {
             "name": "gobject-introspection",
-            "version": "1.84.0,1"
+            "version": "1.86.0,1"
           },
           {
             "name": "graphite2",
@@ -307,7 +307,7 @@
           },
           {
             "name": "gstreamer1",
-            "version": "1.28.1_1"
+            "version": "1.28.1_2"
           },
           {
             "name": "gstreamer1-plugins",
@@ -335,7 +335,7 @@
           },
           {
             "name": "hwdata",
-            "version": "0.405,1"
+            "version": "0.406,1"
           },
           {
             "name": "icu",
@@ -383,7 +383,7 @@
           },
           {
             "name": "lerc",
-            "version": "4.0.0"
+            "version": "4.1.0"
           },
           {
             "name": "libICE",
@@ -395,7 +395,7 @@
           },
           {
             "name": "libX11",
-            "version": "1.8.13,1"
+            "version": "1.8.13_1,1"
           },
           {
             "name": "libXScrnSaver",
@@ -407,7 +407,7 @@
           },
           {
             "name": "libXcomposite",
-            "version": "0.4.6_1,1"
+            "version": "0.4.7,1"
           },
           {
             "name": "libXcursor",
@@ -439,11 +439,11 @@
           },
           {
             "name": "libXinerama",
-            "version": "1.1.5,1"
+            "version": "1.1.6,1"
           },
           {
             "name": "libXmu",
-            "version": "1.1.4,1"
+            "version": "1.3.1,1"
           },
           {
             "name": "libXrandr",
@@ -455,7 +455,7 @@
           },
           {
             "name": "libXt",
-            "version": "1.3.0,1"
+            "version": "1.3.1,1"
           },
           {
             "name": "libXtst",
@@ -463,7 +463,7 @@
           },
           {
             "name": "libXxf86vm",
-            "version": "1.1.6"
+            "version": "1.1.7"
           },
           {
             "name": "libada",
@@ -519,7 +519,7 @@
           },
           {
             "name": "libgcrypt",
-            "version": "1.12.0_1"
+            "version": "1.12.2"
           },
           {
             "name": "libglvnd",
@@ -527,7 +527,7 @@
           },
           {
             "name": "libgpg-error",
-            "version": "1.59"
+            "version": "1.60"
           },
           {
             "name": "libgudev",
@@ -555,7 +555,7 @@
           },
           {
             "name": "libnghttp2",
-            "version": "1.68.1"
+            "version": "1.69.0"
           },
           {
             "name": "libnghttp3",
@@ -575,15 +575,15 @@
           },
           {
             "name": "libpci",
-            "version": "3.14.0"
+            "version": "3.15.0"
           },
           {
             "name": "libpciaccess",
-            "version": "0.18.1_1"
+            "version": "0.19"
           },
           {
             "name": "librsvg2-rust",
-            "version": "2.62.0_1"
+            "version": "2.62.0_2"
           },
           {
             "name": "libsamplerate",
@@ -595,7 +595,7 @@
           },
           {
             "name": "libsndfile",
-            "version": "1.2.2_2"
+            "version": "1.2.2.20251216"
           },
           {
             "name": "libsoxr",
@@ -627,7 +627,7 @@
           },
           {
             "name": "libuv",
-            "version": "1.52.0"
+            "version": "1.52.1"
           },
           {
             "name": "libvorbis",
@@ -643,7 +643,7 @@
           },
           {
             "name": "libxml2",
-            "version": "2.15.2"
+            "version": "2.15.3"
           },
           {
             "name": "libxshmfence",
@@ -655,11 +655,11 @@
           },
           {
             "name": "llhttp",
-            "version": "9.3.1"
+            "version": "9.4.1"
           },
           {
             "name": "lzo2",
-            "version": "2.10_1"
+            "version": "2.10_2"
           },
           {
             "name": "mesa-libs",
@@ -675,7 +675,7 @@
           },
           {
             "name": "mpg123",
-            "version": "1.33.4"
+            "version": "1.33.5"
           },
           {
             "name": "nettle",
@@ -683,7 +683,7 @@
           },
           {
             "name": "node22",
-            "version": "22.22.2"
+            "version": "22.22.2_2"
           },
           {
             "name": "noto-basic",
@@ -747,7 +747,7 @@
           },
           {
             "name": "pciids",
-            "version": "20260309"
+            "version": "20260430"
           },
           {
             "name": "pcre2",
@@ -759,15 +759,15 @@
           },
           {
             "name": "pixman",
-            "version": "0.46.2"
+            "version": "0.46.4"
           },
           {
             "name": "pkg",
-            "version": "2.6.2_1"
+            "version": "2.7.5"
           },
           {
             "name": "png",
-            "version": "1.6.57"
+            "version": "1.6.58"
           },
           {
             "name": "polkit",
@@ -783,7 +783,7 @@
           },
           {
             "name": "py311-packaging",
-            "version": "26.0"
+            "version": "26.2"
           },
           {
             "name": "py311-pycairo",
@@ -819,7 +819,7 @@
           },
           {
             "name": "simdjson",
-            "version": "4.5.0"
+            "version": "4.6.3"
           },
           {
             "name": "skalibs",
@@ -875,7 +875,7 @@
           },
           {
             "name": "xorgproto",
-            "version": "2024.1"
+            "version": "2025.1"
           },
           {
             "name": "xprop",
@@ -1823,7 +1823,7 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.6"
+            "version": "0.34.7"
           },
           {
             "name": "cors",
@@ -3322,7 +3322,7 @@
           },
           {
             "name": "packaging",
-            "version": "26.0"
+            "version": "26.2"
           },
           {
             "name": "pycairo",
