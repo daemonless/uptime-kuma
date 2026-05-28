@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-17T23:46:01Z",
+  "generated": "2026-05-28T23:22:12Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.3.2",
       "arch": "amd64",
-      "generated": "2026-05-17T23:44:46Z",
+      "generated": "2026-05-28T23:20:55Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -55,7 +55,7 @@
           },
           {
             "name": "FreeBSD-libcasper",
-            "version": "15.0"
+            "version": "15.0p9"
           },
           {
             "name": "FreeBSD-libexecinfo",
@@ -99,7 +99,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0p8"
+            "version": "15.0p9"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -111,7 +111,7 @@
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.0p1"
+            "version": "15.0p9"
           },
           {
             "name": "FreeBSD-xz-lib",
@@ -151,7 +151,7 @@
           },
           {
             "name": "at-spi2-core",
-            "version": "2.60.1"
+            "version": "2.60.3"
           },
           {
             "name": "avahi-app",
@@ -167,7 +167,7 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.123.1"
+            "version": "3.124"
           },
           {
             "name": "cairo",
@@ -175,7 +175,7 @@
           },
           {
             "name": "chromium",
-            "version": "148.0.7778.167"
+            "version": "148.0.7778.178"
           },
           {
             "name": "colord",
@@ -183,11 +183,11 @@
           },
           {
             "name": "consolekit2",
-            "version": "1.2.6_6"
+            "version": "2.0.0"
           },
           {
             "name": "corepack",
-            "version": "0.34.7"
+            "version": "0.35.0"
           },
           {
             "name": "cups",
@@ -299,11 +299,11 @@
           },
           {
             "name": "gstreamer1",
-            "version": "1.28.1_2"
+            "version": "1.28.3_2"
           },
           {
             "name": "gstreamer1-plugins",
-            "version": "1.28.1"
+            "version": "1.28.3"
           },
           {
             "name": "gtk-update-icon-cache",
@@ -427,7 +427,7 @@
           },
           {
             "name": "libXi",
-            "version": "1.8.2,1"
+            "version": "1.8.3,1"
           },
           {
             "name": "libXinerama",
@@ -444,6 +444,10 @@
           {
             "name": "libXrender",
             "version": "0.9.12"
+          },
+          {
+            "name": "libXres",
+            "version": "1.2.2_1"
           },
           {
             "name": "libXt",
@@ -540,6 +544,10 @@
           {
             "name": "libltdl",
             "version": "2.5.4"
+          },
+          {
+            "name": "liblz4",
+            "version": "1.10.0_2,1"
           },
           {
             "name": "libnghttp2",
@@ -719,7 +727,7 @@
           },
           {
             "name": "pciids",
-            "version": "20260514"
+            "version": "20260522"
           },
           {
             "name": "pcre2",
@@ -859,7 +867,7 @@
           },
           {
             "name": "zstd",
-            "version": "1.5.7_1"
+            "version": "1.5.7_2"
           }
         ],
         "go": [],
@@ -1795,7 +1803,7 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.7"
+            "version": "0.35.0"
           },
           {
             "name": "cors",
@@ -3307,7 +3315,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 213,
+        "freebsd": 215,
         "go": 0,
         "java": 0,
         "node": 604,
@@ -3315,7 +3323,7 @@
         "python": 4,
         "ruby": 0,
         "rust": 0,
-        "total": 821
+        "total": 823
       }
     }
   }
