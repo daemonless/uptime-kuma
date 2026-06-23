@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-12T23:46:14Z",
+  "generated": "2026-06-23T23:32:06Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.4.0",
       "arch": "amd64",
-      "generated": "2026-06-12T23:45:00Z",
+      "generated": "2026-06-23T23:30:52Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -27,6 +27,10 @@
           },
           {
             "name": "FreeBSD-clibs",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-clibs-lib32",
             "version": "15.0"
           },
           {
@@ -175,7 +179,7 @@
           },
           {
             "name": "chromium",
-            "version": "149.0.7827.102"
+            "version": "149.0.7827.155"
           },
           {
             "name": "colord",
@@ -315,11 +319,11 @@
           },
           {
             "name": "harfbuzz",
-            "version": "13.2.1"
+            "version": "14.2.1"
           },
           {
             "name": "harfbuzz-icu",
-            "version": "13.2.1"
+            "version": "14.2.1"
           },
           {
             "name": "hicolor-icon-theme",
@@ -327,7 +331,7 @@
           },
           {
             "name": "hwdata",
-            "version": "0.407,1"
+            "version": "0.408,1"
           },
           {
             "name": "icu",
@@ -478,6 +482,10 @@
             "version": "1.25"
           },
           {
+            "name": "libdisplay-info",
+            "version": "0.3.0"
+          },
+          {
             "name": "libdrm",
             "version": "2.4.133,1"
           },
@@ -579,7 +587,7 @@
           },
           {
             "name": "librsvg2-rust",
-            "version": "2.62.2_1"
+            "version": "2.62.3"
           },
           {
             "name": "libsamplerate",
@@ -646,12 +654,20 @@
             "version": "9.4.1"
           },
           {
+            "name": "llvm19",
+            "version": "19.1.7_3"
+          },
+          {
+            "name": "lua53",
+            "version": "5.3.6_1"
+          },
+          {
             "name": "lzo2",
             "version": "2.10_2"
           },
           {
             "name": "mesa-libs",
-            "version": "24.1.7_1"
+            "version": "26.0.6"
           },
           {
             "name": "mkfontscale",
@@ -699,7 +715,7 @@
           },
           {
             "name": "nss",
-            "version": "3.124"
+            "version": "3.125"
           },
           {
             "name": "oniguruma",
@@ -719,7 +735,7 @@
           },
           {
             "name": "pango",
-            "version": "1.56.4_1"
+            "version": "1.57.1"
           },
           {
             "name": "pcaudiolib",
@@ -732,6 +748,10 @@
           {
             "name": "pcre2",
             "version": "10.47_1"
+          },
+          {
+            "name": "perl5",
+            "version": "5.42.2"
           },
           {
             "name": "pipewire",
@@ -779,7 +799,7 @@
           },
           {
             "name": "python311",
-            "version": "3.11.15_2"
+            "version": "3.11.15_4"
           },
           {
             "name": "re2",
@@ -820,6 +840,14 @@
           {
             "name": "speexdsp",
             "version": "1.2.1"
+          },
+          {
+            "name": "spirv-llvm-translator-llvm19",
+            "version": "19.1.19"
+          },
+          {
+            "name": "spirv-tools",
+            "version": "2026.2"
           },
           {
             "name": "sqlite3",
@@ -3163,7 +3191,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 215,
+        "freebsd": 222,
         "go": 0,
         "java": 0,
         "node": 566,
@@ -3171,7 +3199,7 @@
         "python": 4,
         "ruby": 0,
         "rust": 0,
-        "total": 785
+        "total": 792
       }
     }
   }
