@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-23T23:32:06Z",
+  "generated": "2026-07-07T08:58:54Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.4.0",
       "arch": "amd64",
-      "generated": "2026-06-23T23:30:52Z",
+      "generated": "2026-07-07T08:57:37Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -27,11 +27,11 @@
           },
           {
             "name": "FreeBSD-clibs",
-            "version": "15.0"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-clibs-lib32",
-            "version": "15.0"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-ctf-lib",
@@ -103,7 +103,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -115,7 +115,7 @@
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-xz-lib",
@@ -123,7 +123,7 @@
           },
           {
             "name": "FreeBSD-zfs-lib",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-zlib",
@@ -179,7 +179,7 @@
           },
           {
             "name": "chromium",
-            "version": "149.0.7827.155"
+            "version": "150.0.7871.46_1"
           },
           {
             "name": "colord",
@@ -187,7 +187,7 @@
           },
           {
             "name": "consolekit2",
-            "version": "2.0.0"
+            "version": "2.0.0_1"
           },
           {
             "name": "corepack",
@@ -239,7 +239,7 @@
           },
           {
             "name": "expat",
-            "version": "2.8.1"
+            "version": "2.8.2"
           },
           {
             "name": "fftw3",
@@ -303,11 +303,11 @@
           },
           {
             "name": "gstreamer1",
-            "version": "1.28.3_3"
+            "version": "1.28.4"
           },
           {
             "name": "gstreamer1-plugins",
-            "version": "1.28.3"
+            "version": "1.28.4"
           },
           {
             "name": "gtk-update-icon-cache",
@@ -359,7 +359,7 @@
           },
           {
             "name": "jq",
-            "version": "1.8.1"
+            "version": "1.8.2"
           },
           {
             "name": "json-glib",
@@ -443,7 +443,7 @@
           },
           {
             "name": "libXrandr",
-            "version": "1.5.4"
+            "version": "1.5.5"
           },
           {
             "name": "libXrender",
@@ -507,7 +507,7 @@
           },
           {
             "name": "libevent",
-            "version": "2.1.12"
+            "version": "2.1.13"
           },
           {
             "name": "libexif",
@@ -515,7 +515,7 @@
           },
           {
             "name": "libffi",
-            "version": "3.5.2"
+            "version": "3.6.0"
           },
           {
             "name": "libfontenc",
@@ -563,11 +563,11 @@
           },
           {
             "name": "libnghttp3",
-            "version": "1.15.0"
+            "version": "1.17.0"
           },
           {
             "name": "libngtcp2",
-            "version": "1.22.1"
+            "version": "1.24.0"
           },
           {
             "name": "libogg",
@@ -635,7 +635,7 @@
           },
           {
             "name": "libxkbcommon",
-            "version": "1.13.1"
+            "version": "1.13.2"
           },
           {
             "name": "libxml2",
@@ -651,11 +651,11 @@
           },
           {
             "name": "llhttp",
-            "version": "9.4.1"
+            "version": "9.4.2"
           },
           {
             "name": "llvm19",
-            "version": "19.1.7_3"
+            "version": "19.1.7_4"
           },
           {
             "name": "lua53",
@@ -667,7 +667,7 @@
           },
           {
             "name": "mesa-libs",
-            "version": "26.0.6"
+            "version": "26.1.3"
           },
           {
             "name": "mkfontscale",
@@ -683,7 +683,7 @@
           },
           {
             "name": "node22",
-            "version": "22.22.3"
+            "version": "22.23.1"
           },
           {
             "name": "noto-basic",
@@ -743,7 +743,7 @@
           },
           {
             "name": "pciids",
-            "version": "20260522"
+            "version": "20260624"
           },
           {
             "name": "pcre2",
@@ -778,28 +778,32 @@
             "version": "17.0_4"
           },
           {
-            "name": "py311-dbus",
+            "name": "py312-dbus",
             "version": "1.4.0"
           },
           {
-            "name": "py311-packaging",
+            "name": "py312-packaging",
             "version": "26.2"
           },
           {
-            "name": "py311-pycairo",
+            "name": "py312-pycairo",
             "version": "1.29.0"
           },
           {
-            "name": "py311-pygobject",
+            "name": "py312-pygobject",
             "version": "3.54.5_1"
+          },
+          {
+            "name": "py312-setuptools",
+            "version": "63.1.0_3"
           },
           {
             "name": "pygobject-common",
             "version": "3.54.5_1"
           },
           {
-            "name": "python311",
-            "version": "3.11.15_4"
+            "name": "python312",
+            "version": "3.12.13_3"
           },
           {
             "name": "re2",
@@ -843,7 +847,7 @@
           },
           {
             "name": "spirv-llvm-translator-llvm19",
-            "version": "19.1.19"
+            "version": "19.1.20"
           },
           {
             "name": "spirv-tools",
@@ -851,7 +855,7 @@
           },
           {
             "name": "sqlite3",
-            "version": "3.53.1,1"
+            "version": "3.53.3,1"
           },
           {
             "name": "tiff",
@@ -879,7 +883,7 @@
           },
           {
             "name": "xkeyboard-config",
-            "version": "2.41_4"
+            "version": "2.48"
           },
           {
             "name": "xorgproto",
@@ -3183,6 +3187,10 @@
           {
             "name": "pycairo",
             "version": "1.29.0"
+          },
+          {
+            "name": "setuptools",
+            "version": "63.1.0"
           }
         ],
         "ruby": [],
@@ -3191,15 +3199,15 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 222,
+        "freebsd": 223,
         "go": 0,
         "java": 0,
         "node": 566,
         "php": 0,
-        "python": 4,
+        "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 792
+        "total": 794
       }
     }
   }
