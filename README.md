@@ -10,6 +10,9 @@ Source: dbuild templates
 
 Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications.
 
+> [!WARNING]
+> **Requires ocijail ≥ 0.6.0 (annotation support).** This image needs the jail permission **allow.raw_sockets**, applied via OCI annotations. FreeBSD **quarterly ships ocijail 0.4.0, which has no annotation support** — the container starts but the permission is silently dropped, so the app can crash or misbehave at runtime. Point your pkg repos at the `latest` branch (ocijail ≥ 0.6.0), then run with the annotation flag below. See the [ocijail guide](https://daemonless.io/guides/ocijail-patch/).
+
 | | |
 |---|---|
 | **Port** | 3001 |
@@ -18,13 +21,11 @@ Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and
 | **Website** | [https://uptime.kuma.pet/](https://uptime.kuma.pet/) |
 
 ## Version Tags
-
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
 | `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
 
 ## Prerequisites
-
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
@@ -34,12 +35,12 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   uptime-kuma:
-    image: ghcr.io/daemonless/uptime-kuma:latest
+    image: "ghcr.io/daemonless/uptime-kuma:latest"
     container_name: uptime-kuma
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+      - PUID=1000  # User ID for the application process
+      - PGID=1000  # Group ID for the application process
+      - TZ=UTC  # Timezone for the container
       - UPTIME_KUMA_IS_CONTAINER=1
       - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
@@ -47,17 +48,18 @@ services:
     volumes:
       - "/path/to/containers/uptime-kuma:/config"
     ports:
-      - 3001:3001
+      - "3001:3001"
     annotations:
       org.freebsd.jail.allow.raw_sockets: "true"
     restart: unless-stopped
 ```
 
 ### AppJail Director
-
 **.env**:
 
 ```
+# .env
+
 DIRECTOR_PROJECT=uptime-kuma
 PUID=1000
 PGID=1000
@@ -71,6 +73,8 @@ DATA_DIR=/config
 **appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
 options:
   - virtualnet: ':<random> default'
   - nat:
@@ -79,6 +83,7 @@ services:
     name: uptime_kuma
     options:
       - container: 'boot args:--pull'
+      - expose: '3001:3001 proto:tcp' \
     oci:
       user: root
       environment:
@@ -99,12 +104,15 @@ volumes:
 **Makejail**:
 
 ```
+# Makejail
+
 ARG tag=latest
 
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/uptime-kuma:${tag}
 SET allow.raw_sockets=1
 ```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
 
@@ -123,13 +131,34 @@ podman run -d --name uptime-kuma \
   ghcr.io/daemonless/uptime-kuma:latest
 ```
 
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -o expose="3001:3001 proto:tcp" \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
+  -e UPTIME_KUMA_IS_CONTAINER=1 \
+  -e UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
+  -e PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
+  -e DATA_DIR=/config \
+  -o fstab="/path/to/containers/uptime-kuma /config <pseudofs>" \
+  ghcr.io/daemonless/uptime-kuma:latest uptime-kuma
+```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
 ### Ansible
 
 ```yaml
 - name: Deploy uptime-kuma
   containers.podman.podman_container:
     name: uptime-kuma
-    image: ghcr.io/daemonless/uptime-kuma:latest
+    image: "ghcr.io/daemonless/uptime-kuma:latest"
     state: started
     restart_policy: always
     env:
@@ -147,6 +176,8 @@ podman run -d --name uptime-kuma \
     annotation:
       org.freebsd.jail.allow.raw_sockets: "true"
 ```
+
+Access at: `http://localhost:3001`
 
 ## Parameters
 
@@ -176,7 +207,7 @@ podman run -d --name uptime-kuma \
 
 **Architectures:** amd64
 **User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
-**Base:** FreeBSD 15.0
+**Base:** FreeBSD 15
 
 ---
 
