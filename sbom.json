@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-01T20:07:09Z",
+  "generated": "2026-08-07T12:49:55Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.5.0",
       "arch": "amd64",
-      "generated": "2026-08-01T19:40:47Z",
+      "generated": "2026-08-07T12:46:29Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -348,7 +348,7 @@
               "GPLv2"
             ],
             "name": "consolekit2",
-            "version": "2.0.0_1"
+            "version": "2.0.0_2"
           },
           {
             "licenses": [
@@ -363,7 +363,7 @@
               "CUPS"
             ],
             "name": "cups",
-            "version": "2.4.19_1"
+            "version": "2.4.19_2"
           },
           {
             "licenses": [
@@ -610,7 +610,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.409,1"
+            "version": "0.410,1"
           },
           {
             "licenses": [
@@ -1118,7 +1118,7 @@
               "BSD2CLAUSE"
             ],
             "name": "libudev-devd",
-            "version": "0.6.0"
+            "version": "0.7.0"
           },
           {
             "licenses": [
@@ -1235,7 +1235,7 @@
               "LGPL21"
             ],
             "name": "mpg123",
-            "version": "1.33.6"
+            "version": "1.33.7"
           },
           {
             "licenses": [
@@ -1364,7 +1364,7 @@
               "GPLv1+"
             ],
             "name": "perl5",
-            "version": "5.42.2"
+            "version": "5.42.3"
           },
           {
             "licenses": [
@@ -1493,7 +1493,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.4"
+            "version": "4.6.6"
           },
           {
             "licenses": [
@@ -1536,7 +1536,7 @@
               "NCSA"
             ],
             "name": "spirv-llvm-translator-llvm19",
-            "version": "19.1.20"
+            "version": "19.1.21"
           },
           {
             "licenses": [
