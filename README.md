@@ -23,7 +23,7 @@ Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+| `latest` | **Upstream Binary**. Built from official release. | Most users — recommended. |
 
 ## Prerequisites
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
@@ -83,7 +83,7 @@ services:
     name: uptime_kuma
     options:
       - container: 'boot args:--pull'
-      - expose: '3001:3001 proto:tcp' \
+      - expose: '3001:3001 proto:tcp'
     oci:
       user: root
       environment:
