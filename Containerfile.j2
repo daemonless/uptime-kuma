@@ -33,7 +33,9 @@ RUN sed -i '' "s/process.platform === 'linux'/process.platform === 'freebsd'/" \
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
-ARG PACKAGES="node22 chromium"
+ARG PACKAGES="node22"
+# separate so the runtime step can fall back to the build-tools bundle
+ARG CHROMIUM_PKG="chromium"
 ARG UPSTREAM_URL="https://api.github.com/repos/louislam/uptime-kuma/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
 {%- if ports %}
@@ -67,11 +69,23 @@ LABEL org.opencontainers.image.title="{{ title }}" \
       io.daemonless.upstream-url="${UPSTREAM_URL}" \
       io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
       io.daemonless.healthcheck-url="${HEALTHCHECK_ENDPOINT}" \
-      io.daemonless.packages="${PACKAGES}"
+      io.daemonless.packages="${PACKAGES} ${CHROMIUM_PKG}"
 
-# Runtime dependencies
+# Runtime deps. chromium periodically drops out of the FreeBSD repos; if it's
+# gone, install it from the build-tools bundle (deps still come from the repo).
 RUN pkg update && \
     pkg install -y ${PACKAGES} && \
+    ( pkg install -y ${CHROMIUM_PKG} || ( \
+        echo "chromium not in live repo -- falling back to build-tools bundle" && \
+        REF=$(fetch -qo - https://api.github.com/repos/daemonless/build-tools/releases/latest | grep -o '"tag_name": *"[^"]*"' | head -1 | sed 's/.*"tag_name": *"//;s/"//') && \
+        SS_REF=$(echo "${REF}" | sed 's/\(freebsd-[0-9.]*-\)/\1screenshot-/') && \
+        fetch -qo /tmp/bt.tar.gz "https://github.com/daemonless/build-tools/releases/download/${REF}/${SS_REF}.tar.gz" && \
+        mkdir -p /tmp/bt-repo && tar -xzf /tmp/bt.tar.gz -C /tmp/bt-repo && rm -f /tmp/bt.tar.gz && \
+        pkg repo /tmp/bt-repo && \
+        mkdir -p /usr/local/etc/pkg/repos && \
+        printf 'bundle: { url: "file:///tmp/bt-repo", priority: 100, enabled: yes }\n' > /usr/local/etc/pkg/repos/bundle.conf && \
+        pkg update && pkg install -y ${CHROMIUM_PKG} && \
+        rm -f /usr/local/etc/pkg/repos/bundle.conf && rm -rf /tmp/bt-repo ) ) && \
     pkg clean -ay && \
     rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
 
