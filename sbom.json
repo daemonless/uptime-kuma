@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-15T08:20:52Z",
+  "generated": "2026-08-22T21:50:54Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
-      "app_version": "2.5.0",
+      "app_version": "2.5.3",
       "arch": "amd64",
-      "generated": "2026-08-15T08:18:42Z",
+      "generated": "2026-08-22T21:48:17Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -256,16 +256,16 @@
           },
           {
             "licenses": [
-              "CC-BY-SA-3.0",
-              "LGPL3"
+              "LGPL3",
+              "CC-BY-SA-3.0"
             ],
             "name": "adwaita-icon-theme",
             "version": "47.0"
           },
           {
             "licenses": [
-              "CC-BY-SA-3.0",
-              "LGPL3"
+              "LGPL3",
+              "CC-BY-SA-3.0"
             ],
             "name": "adwaita-icon-theme-legacy",
             "version": "46.2"
@@ -317,7 +317,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.125"
+            "version": "3.126.1"
           },
           {
             "licenses": [
@@ -329,8 +329,8 @@
           },
           {
             "licenses": [
-              "LGPL21",
               "BSD3CLAUSE",
+              "LGPL21",
               "MPL11"
             ],
             "name": "chromium",
@@ -363,7 +363,7 @@
               "CUPS"
             ],
             "name": "cups",
-            "version": "2.4.19_2"
+            "version": "2.4.19_1"
           },
           {
             "licenses": [
@@ -458,9 +458,9 @@
           },
           {
             "licenses": [
-              "LGPL21",
               "GPLv2",
               "BSD3CLAUSE",
+              "LGPL21",
               "GFDL"
             ],
             "name": "flac",
@@ -526,6 +526,13 @@
           },
           {
             "licenses": [
+              "LGPL3"
+            ],
+            "name": "gmp",
+            "version": "6.3.0"
+          },
+          {
+            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "gnome_subr",
@@ -542,8 +549,8 @@
           {
             "licenses": [
               "MPL20",
-              "LGPL21",
-              "GPLv2"
+              "GPLv2",
+              "LGPL21"
             ],
             "name": "graphite2",
             "version": "1.3.15"
@@ -567,7 +574,7 @@
               "LGPL20"
             ],
             "name": "gstreamer1-plugins",
-            "version": "1.28.6"
+            "version": "1.28.5"
           },
           {
             "licenses": [
@@ -635,8 +642,8 @@
           },
           {
             "licenses": [
-              "LGPL21",
-              "GPLv2"
+              "GPLv2",
+              "LGPL21"
             ],
             "name": "jackit",
             "version": "1.9.22_3"
@@ -781,7 +788,7 @@
               "MIT"
             ],
             "name": "libXft",
-            "version": "2.3.9"
+            "version": "2.3.8"
           },
           {
             "licenses": [
@@ -843,6 +850,13 @@
             "licenses": [
               "MIT"
             ],
+            "name": "libXv",
+            "version": "1.0.13,1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
             "name": "libXxf86vm",
             "version": "1.1.7"
           },
@@ -887,7 +901,7 @@
               "MIT"
             ],
             "name": "libdrm",
-            "version": "2.4.134,1"
+            "version": "2.4.133,1"
           },
           {
             "licenses": [
@@ -936,7 +950,7 @@
               "MIT"
             ],
             "name": "libffi",
-            "version": "3.7.1"
+            "version": "3.8.0"
           },
           {
             "licenses": [
@@ -963,8 +977,8 @@
           },
           {
             "licenses": [
-              "LGPL21",
-              "GPLv2"
+              "GPLv2",
+              "LGPL21"
             ],
             "name": "libgpg-error",
             "version": "1.61"
@@ -1214,7 +1228,7 @@
               "MIT"
             ],
             "name": "mesa-libs",
-            "version": "26.1.6"
+            "version": "26.1.5_1"
           },
           {
             "licenses": [
@@ -1225,10 +1239,24 @@
           },
           {
             "licenses": [
+              "LGPL3+"
+            ],
+            "name": "mpc",
+            "version": "1.4.1"
+          },
+          {
+            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "mpdecimal",
             "version": "4.0.1"
+          },
+          {
+            "licenses": [
+              "LGPL3+"
+            ],
+            "name": "mpfr",
+            "version": "4.2.2,1"
           },
           {
             "licenses": [
@@ -1345,11 +1373,11 @@
           },
           {
             "licenses": [
-              "GPLv2+",
-              "BSD3CLAUSE"
+              "BSD3CLAUSE",
+              "GPLv2+"
             ],
             "name": "pciids",
-            "version": "20260711"
+            "version": "20260712"
           },
           {
             "licenses": [
@@ -1429,14 +1457,14 @@
               "MPL11"
             ],
             "name": "py312-pycairo",
-            "version": "1.29.0"
+            "version": "1.29.1"
           },
           {
             "licenses": [
               "LGPL21"
             ],
             "name": "py312-pygobject",
-            "version": "3.56.3"
+            "version": "3.56.3_1"
           },
           {
             "licenses": [
@@ -1450,14 +1478,14 @@
               "LGPL21"
             ],
             "name": "pygobject-common",
-            "version": "3.56.3"
+            "version": "3.56.3_1"
           },
           {
             "licenses": [
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.13_4"
+            "version": "3.12.14"
           },
           {
             "licenses": [
@@ -1511,8 +1539,8 @@
           },
           {
             "licenses": [
-              "LGPL21",
-              "GPLv2"
+              "GPLv2",
+              "LGPL21"
             ],
             "name": "speech-dispatcher",
             "version": "0.12.1_1"
@@ -1543,7 +1571,7 @@
               "APACHE20"
             ],
             "name": "spirv-tools",
-            "version": "2026.3.r1"
+            "version": "2026.3"
           },
           {
             "licenses": [
@@ -1551,6 +1579,13 @@
             ],
             "name": "sqlite3",
             "version": "3.53.3,1"
+          },
+          {
+            "licenses": [
+              "TclTk"
+            ],
+            "name": "tcl86",
+            "version": "8.6.18_1"
           },
           {
             "licenses": [
@@ -1637,82 +1672,82 @@
           {
             "name": "@aws-sdk/core",
             "purl": "",
-            "version": "3.975.2"
+            "version": "3.977.6"
           },
           {
             "name": "@aws-sdk/credential-provider-cognito-identity",
             "purl": "",
-            "version": "3.972.57"
+            "version": "3.972.66"
           },
           {
             "name": "@aws-sdk/credential-provider-env",
             "purl": "",
-            "version": "3.972.58"
+            "version": "3.972.67"
           },
           {
             "name": "@aws-sdk/credential-provider-http",
             "purl": "",
-            "version": "3.972.60"
+            "version": "3.972.69"
           },
           {
             "name": "@aws-sdk/credential-provider-ini",
             "purl": "",
-            "version": "3.973.2"
+            "version": "3.973.12"
           },
           {
             "name": "@aws-sdk/credential-provider-login",
             "purl": "",
-            "version": "3.972.64"
+            "version": "3.972.74"
           },
           {
             "name": "@aws-sdk/credential-provider-node",
             "purl": "",
-            "version": "3.972.68"
+            "version": "3.972.78"
           },
           {
             "name": "@aws-sdk/credential-provider-process",
             "purl": "",
-            "version": "3.972.58"
+            "version": "3.972.67"
           },
           {
             "name": "@aws-sdk/credential-provider-sso",
             "purl": "",
-            "version": "3.973.2"
+            "version": "3.973.11"
           },
           {
             "name": "@aws-sdk/credential-provider-web-identity",
             "purl": "",
-            "version": "3.972.64"
+            "version": "3.972.73"
           },
           {
             "name": "@aws-sdk/credential-providers",
             "purl": "",
-            "version": "3.1087.0"
+            "version": "3.1106.0"
           },
           {
             "name": "@aws-sdk/nested-clients",
             "purl": "",
-            "version": "3.997.32"
+            "version": "3.997.41"
           },
           {
             "name": "@aws-sdk/signature-v4-multi-region",
             "purl": "",
-            "version": "3.996.40"
+            "version": "3.996.43"
           },
           {
             "name": "@aws-sdk/token-providers",
             "purl": "",
-            "version": "3.1087.0"
+            "version": "3.1103.0"
           },
           {
             "name": "@aws-sdk/types",
             "purl": "",
-            "version": "3.974.1"
+            "version": "3.974.2"
           },
           {
             "name": "@aws-sdk/xml-builder",
             "purl": "",
-            "version": "3.972.35"
+            "version": "3.972.37"
           },
           {
             "name": "@aws/lambda-invoke-store",
@@ -1787,17 +1822,17 @@
           {
             "name": "@azure/msal-browser",
             "purl": "",
-            "version": "5.17.0"
+            "version": "5.18.0"
           },
           {
             "name": "@azure/msal-common",
             "purl": "",
-            "version": "16.11.1"
+            "version": "16.12.0"
           },
           {
             "name": "@azure/msal-node",
             "purl": "",
-            "version": "5.4.0"
+            "version": "5.5.0"
           },
           {
             "name": "@gar/promisify",
@@ -1847,7 +1882,7 @@
           {
             "name": "@mongodb-js/saslprep",
             "purl": "",
-            "version": "1.4.12"
+            "version": "1.4.13"
           },
           {
             "name": "@my-scope/package-a",
@@ -1992,27 +2027,27 @@
           {
             "name": "@smithy/core",
             "purl": "",
-            "version": "3.29.4"
+            "version": "3.31.1"
           },
           {
             "name": "@smithy/credential-provider-imds",
             "purl": "",
-            "version": "4.4.9"
+            "version": "4.4.16"
           },
           {
             "name": "@smithy/fetch-http-handler",
             "purl": "",
-            "version": "5.6.6"
+            "version": "5.6.13"
           },
           {
             "name": "@smithy/node-http-handler",
             "purl": "",
-            "version": "4.9.6"
+            "version": "4.9.13"
           },
           {
             "name": "@smithy/signature-v4",
             "purl": "",
-            "version": "5.6.5"
+            "version": "5.6.12"
           },
           {
             "name": "@smithy/types",
@@ -2347,7 +2382,7 @@
           {
             "name": "brace-expansion",
             "purl": "",
-            "version": "1.1.16"
+            "version": "1.1.18"
           },
           {
             "name": "bson",
@@ -2562,7 +2597,7 @@
           {
             "name": "country-flag-emoji-polyfill",
             "purl": "",
-            "version": "0.1.8"
+            "version": "0.1.10"
           },
           {
             "name": "croner",
@@ -3107,7 +3142,7 @@
           {
             "name": "ip-address",
             "purl": "",
-            "version": "10.2.0"
+            "version": "10.4.0"
           },
           {
             "name": "ipaddr.js",
@@ -3507,7 +3542,7 @@
           {
             "name": "nanoid",
             "purl": "",
-            "version": "3.3.16"
+            "version": "3.3.18"
           },
           {
             "name": "native-duplexpair",
@@ -4077,7 +4112,7 @@
           {
             "name": "socket.io-parser",
             "purl": "",
-            "version": "4.2.6"
+            "version": "4.2.7"
           },
           {
             "name": "socks",
@@ -4207,7 +4242,7 @@
           {
             "name": "tldts-core",
             "purl": "",
-            "version": "7.4.8"
+            "version": "7.4.10"
           },
           {
             "name": "toidentifier",
@@ -4247,7 +4282,7 @@
           {
             "name": "undici",
             "purl": "",
-            "version": "6.27.0"
+            "version": "6.28.0"
           },
           {
             "name": "undici-types",
@@ -4282,7 +4317,7 @@
           {
             "name": "uptime-kuma",
             "purl": "",
-            "version": "2.5.0"
+            "version": "2.5.3"
           },
           {
             "name": "url-parse",
@@ -4362,7 +4397,7 @@
           {
             "name": "ws",
             "purl": "",
-            "version": "7.5.12"
+            "version": "7.5.13"
           },
           {
             "name": "wsl-utils",
@@ -4440,7 +4475,7 @@
           {
             "name": "pycairo",
             "purl": "",
-            "version": "1.29.0"
+            "version": "1.29.1"
           },
           {
             "name": "setuptools",
@@ -4454,7 +4489,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 226,
+        "freebsd": 231,
         "go": 0,
         "java": 0,
         "node": 557,
@@ -4462,7 +4497,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 788
+        "total": 793
       }
     }
   }

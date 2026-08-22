@@ -51,8 +51,7 @@ services:
       - "3001:3001"
     annotations:
       org.freebsd.jail.allow.raw_sockets: "true"
-    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
-    restart: always
+    restart: unless-stopped
 ```
 
 ### AppJail Director
