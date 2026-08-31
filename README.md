@@ -10,9 +10,6 @@ Source: dbuild templates
 
 Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications.
 
-> [!WARNING]
-> **Requires ocijail ≥ 0.6.0 (annotation support).** This image needs the jail permission **allow.raw_sockets**, applied via OCI annotations. FreeBSD **quarterly ships ocijail 0.4.0, which has no annotation support** — the container starts but the permission is silently dropped, so the app can crash or misbehave at runtime. Point your pkg repos at the `latest` branch (ocijail ≥ 0.6.0), then run with the annotation flag below. See the [ocijail guide](https://daemonless.io/guides/ocijail-patch/).
-
 | | |
 |---|---|
 | **Port** | 3001 |
@@ -51,8 +48,11 @@ services:
       - "3001:3001"
     annotations:
       org.freebsd.jail.allow.raw_sockets: "true"
-    restart: unless-stopped
+    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
+    restart: always
 ```
+
+Save as `compose.yaml`, then run `podman-compose up -d`.
 
 ### AppJail Director
 **.env**:
@@ -112,6 +112,9 @@ OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/uptime-kuma:${tag}
 SET allow.raw_sockets=1
 ```
+
+Save the files above, then run `appjail-director up`.
+
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
@@ -130,6 +133,8 @@ podman run -d --name uptime-kuma \
   -v /path/to/containers/uptime-kuma:/config \
   ghcr.io/daemonless/uptime-kuma:latest
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
@@ -150,7 +155,46 @@ appjail oci run -Pd \
   -o fstab="/path/to/containers/uptime-kuma /config <pseudofs>" \
   ghcr.io/daemonless/uptime-kuma:latest uptime-kuma
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
+
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+### Bastille
+
+> [!WARNING]
+> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+
+```yaml
+services:
+  uptime-kuma:
+    image: "ghcr.io/daemonless/uptime-kuma:latest"
+    container_name: uptime-kuma
+    network_mode: host  # jail shares host networking
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - UPTIME_KUMA_IS_CONTAINER=1
+      - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - DATA_DIR=/config
+```
+
+Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+
+```bash
+bastille create -O \
+  --env PUID=1000 \
+  --env PGID=1000 \
+  --env TZ=UTC \
+  --env UPTIME_KUMA_IS_CONTAINER=1 \
+  --env UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
+  --env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
+  --env DATA_DIR=/config \
+  --data-path /path/to/containers/uptime-kuma \
+  uptime-kuma ghcr.io/daemonless/uptime-kuma:latest inherit
+```
 
 ### Ansible
 
@@ -176,6 +220,8 @@ appjail oci run -Pd \
     annotation:
       org.freebsd.jail.allow.raw_sockets: "true"
 ```
+
+Save as `uptime-kuma-deploy.yaml`, then run `ansible-playbook uptime-kuma-deploy.yaml`.
 
 Access at: `http://localhost:3001`
 
