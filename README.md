@@ -82,8 +82,9 @@ services:
   uptime-kuma:
     name: uptime_kuma
     options:
-      - container: 'boot args:--pull'
+      - container: 'args:--pull'
       - expose: '3001:3001 proto:tcp'
+      - template: !ENV '${PWD}/template.conf'
     oci:
       user: root
       environment:
@@ -108,14 +109,30 @@ volumes:
 
 ARG tag=latest
 
+OPTION container=boot
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/uptime-kuma:${tag}
-SET allow.raw_sockets=1
+```
+
+**template.conf**:
+
+```
+# template.conf
+
+exec.start: "/bin/sh /etc/rc"
+exec.stop: "/bin/sh /etc/rc.shutdown jail"
+mount.devfs
+persist
+allow.raw_sockets
 ```
 
 Save the files above, then run `appjail-director up`.
 
-**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+> [!WARNING]
+> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
+>
+> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
 ### Podman CLI
 
@@ -138,12 +155,14 @@ Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
+
 ```bash
 appjail oci run -Pd \
   -o overwrite=force \
   -o container="args:--pull" \
   -o virtualnet=":<random> default" \
   -o nat \
+  -o template=template.conf \
   -o expose="3001:3001 proto:tcp" \
   -e PUID=1000 \
   -e PGID=1000 \
@@ -156,21 +175,37 @@ appjail oci run -Pd \
   ghcr.io/daemonless/uptime-kuma:latest uptime-kuma
 ```
 
-Save as `run.sh`, then run `sh run.sh`.
+**template.conf**:
+```
+# template.conf
 
-**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+exec.start: "/bin/sh /etc/rc"
+exec.stop: "/bin/sh /etc/rc.shutdown jail"
+mount.devfs
+persist
+allow.raw_sockets
+```
+
+Save the files above, then run `sh run.sh`.
+
+
+> [!WARNING]
+> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
+>
+> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
 ### Bastille
 
 > [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
 
 ```yaml
 services:
   uptime-kuma:
+    name: uptime-kuma
     image: "ghcr.io/daemonless/uptime-kuma:latest"
-    container_name: uptime-kuma
-    network_mode: host  # jail shares host networking
+    network:
+      - mode: host
     environment:
       - PUID=1000
       - PGID=1000
@@ -179,9 +214,11 @@ services:
       - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
       - DATA_DIR=/config
+    volumes:
+      - "/path/to/containers/uptime-kuma:/config"
 ```
 
-Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
 
 ```bash
 bastille create -O \
@@ -192,7 +229,7 @@ bastille create -O \
   --env UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
   --env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
   --env DATA_DIR=/config \
-  --data-path /path/to/containers/uptime-kuma \
+  --volume /path/to/containers/uptime-kuma /config \
   uptime-kuma ghcr.io/daemonless/uptime-kuma:latest inherit
 ```
 
