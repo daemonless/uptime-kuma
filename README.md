@@ -7,6 +7,7 @@ Source: dbuild templates
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/uptime-kuma/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/uptime-kuma/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/uptime-kuma?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/uptime-kuma/commits)
+[![OCI Pulls](https://img.shields.io/docker/pulls/daemonless/uptime-kuma?style=flat-square&label=OCI+Pulls&color=blue)](https://hub.docker.com/r/daemonless/uptime-kuma)
 
 Self-hosted uptime monitoring tool with a beautiful dashboard, status pages, and multi-channel notifications.
 
