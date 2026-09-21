@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-16T19:45:26Z",
+  "generated": "2026-09-21T22:37:32Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.5.5",
       "arch": "amd64",
-      "generated": "2026-09-16T19:42:49Z",
+      "generated": "2026-09-21T22:15:24Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -63,6 +63,13 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-devmatch",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD-3-Clause"
+            ],
+            "name": "FreeBSD-dhclient",
             "version": "15.1"
           },
           {
@@ -182,6 +189,13 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-rc",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
           {
@@ -951,7 +965,7 @@
               "GPLv2+"
             ],
             "name": "libgcrypt",
-            "version": "1.12.3_2"
+            "version": "1.12.4"
           },
           {
             "licenses": [
@@ -1349,7 +1363,7 @@
               "GPLv2+"
             ],
             "name": "pciids",
-            "version": "20260912"
+            "version": "20260918"
           },
           {
             "licenses": [
@@ -1471,7 +1485,7 @@
               "GPLv3"
             ],
             "name": "readline",
-            "version": "8.3.3"
+            "version": "8.3.6"
           },
           {
             "licenses": [
@@ -4489,7 +4503,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 226,
+        "freebsd": 228,
         "go": 0,
         "java": 0,
         "node": 564,
@@ -4497,7 +4511,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 795
+        "total": 797
       }
     }
   }
