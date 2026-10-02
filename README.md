@@ -44,7 +44,7 @@ services:
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
       - DATA_DIR=/config
     volumes:
-      - "/path/to/containers/uptime-kuma:/config"
+      - "/containers/uptime-kuma:/config"
     ports:
       - "3001:3001"
     annotations:
@@ -100,7 +100,7 @@ services:
       - uptime-kuma: /config
 volumes:
   uptime-kuma:
-    device: '/path/to/containers/uptime-kuma'
+    device: '/containers/uptime-kuma'
 ```
 
 **Makejail**:
@@ -135,66 +135,6 @@ Save the files above, then run `appjail-director up`.
 >
 > To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
-### Podman CLI
-
-```bash
-podman run -d --name uptime-kuma \
-  -p 3001:3001 \
-  --annotation 'org.freebsd.jail.allow.raw_sockets=true' \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -e UPTIME_KUMA_IS_CONTAINER=1 \
-  -e UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
-  -e PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
-  -e DATA_DIR=/config \
-  -v /path/to/containers/uptime-kuma:/config \
-  ghcr.io/daemonless/uptime-kuma:latest
-```
-
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o template=template.conf \
-  -o expose="3001:3001 proto:tcp" \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -e UPTIME_KUMA_IS_CONTAINER=1 \
-  -e UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
-  -e PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
-  -e DATA_DIR=/config \
-  -o fstab="/path/to/containers/uptime-kuma /config <pseudofs>" \
-  ghcr.io/daemonless/uptime-kuma:latest uptime-kuma
-```
-
-**template.conf**:
-```
-# template.conf
-
-exec.start: "/bin/sh /etc/rc"
-exec.stop: "/bin/sh /etc/rc.shutdown jail"
-mount.devfs
-persist
-allow.raw_sockets
-```
-
-Save the files above, then run `sh run.sh`.
-
-
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
-
 ### Bastille
 
 > [!WARNING]
@@ -216,50 +156,10 @@ services:
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
       - DATA_DIR=/config
     volumes:
-      - "/path/to/containers/uptime-kuma:/config"
+      - "/containers/uptime-kuma:/config"
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --env PUID=1000 \
-  --env PGID=1000 \
-  --env TZ=UTC \
-  --env UPTIME_KUMA_IS_CONTAINER=1 \
-  --env UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1 \
-  --env PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
-  --env DATA_DIR=/config \
-  --volume /path/to/containers/uptime-kuma /config \
-  uptime-kuma ghcr.io/daemonless/uptime-kuma:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy uptime-kuma
-  containers.podman.podman_container:
-    name: uptime-kuma
-    image: "ghcr.io/daemonless/uptime-kuma:latest"
-    state: started
-    restart_policy: always
-    env:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "UTC"
-      UPTIME_KUMA_IS_CONTAINER: "1"
-      UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: "1"
-      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
-      DATA_DIR: "/config"
-    ports:
-      - "3001:3001"
-    volumes:
-      - "/path/to/containers/uptime-kuma:/config"
-    annotation:
-      org.freebsd.jail.allow.raw_sockets: "true"
-```
-
-Save as `uptime-kuma-deploy.yaml`, then run `ansible-playbook uptime-kuma-deploy.yaml`.
+Save as `bastille-compose.yml`, then run `bastille up`.
 
 Access at: `http://localhost:3001`
 
