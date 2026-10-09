@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-02T23:53:32Z",
+  "generated": "2026-10-09T23:18:52Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
-      "app_version": "2.5.5",
+      "app_version": "2.5.6",
       "arch": "amd64",
-      "generated": "2026-10-02T23:51:20Z",
+      "generated": "2026-10-09T23:16:00Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -42,7 +42,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-clibs",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -70,7 +70,7 @@
               "BSD-3-Clause"
             ],
             "name": "FreeBSD-dhclient",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -105,7 +105,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-libcasper",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -168,7 +168,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1p3"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -203,7 +203,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p3"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -224,7 +224,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-utilities",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -331,7 +331,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.129"
+            "version": "3.130"
           },
           {
             "licenses": [
@@ -398,7 +398,7 @@
               "GPLv2+"
             ],
             "name": "dbus-glib",
-            "version": "0.114"
+            "version": "0.116"
           },
           {
             "licenses": [
@@ -454,7 +454,7 @@
               "MIT"
             ],
             "name": "expat",
-            "version": "2.8.4"
+            "version": "2.8.5"
           },
           {
             "licenses": [
@@ -1228,7 +1228,7 @@
               "MIT"
             ],
             "name": "mesa-libs",
-            "version": "26.2.2"
+            "version": "26.2.2_1"
           },
           {
             "licenses": [
@@ -1256,7 +1256,7 @@
               "MIT"
             ],
             "name": "node22",
-            "version": "22.23.2"
+            "version": "22.23.2_1"
           },
           {
             "licenses": [
@@ -1363,14 +1363,14 @@
               "GPLv2+"
             ],
             "name": "pciids",
-            "version": "20260918"
+            "version": "20260922"
           },
           {
             "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "pcre2",
-            "version": "10.48"
+            "version": "10.49"
           },
           {
             "licenses": [
@@ -1427,7 +1427,7 @@
               "MIT"
             ],
             "name": "py312-dbus",
-            "version": "1.4.0"
+            "version": "1.4.0_1"
           },
           {
             "licenses": [
@@ -1507,7 +1507,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.11_1"
+            "version": "5.0.1"
           },
           {
             "licenses": [
@@ -1550,14 +1550,14 @@
               "NCSA"
             ],
             "name": "spirv-llvm-translator-llvm19",
-            "version": "19.1.22"
+            "version": "19.1.23"
           },
           {
             "licenses": [
               "APACHE20"
             ],
             "name": "spirv-tools",
-            "version": "2026.3"
+            "version": "2026.4.r2"
           },
           {
             "licenses": [
@@ -1656,62 +1656,62 @@
           {
             "name": "@aws-sdk/core",
             "purl": "",
-            "version": "3.977.9"
+            "version": "3.978.0"
           },
           {
             "name": "@aws-sdk/credential-provider-cognito-identity",
             "purl": "",
-            "version": "3.972.69"
+            "version": "3.972.70"
           },
           {
             "name": "@aws-sdk/credential-provider-env",
             "purl": "",
-            "version": "3.972.70"
+            "version": "3.972.71"
           },
           {
             "name": "@aws-sdk/credential-provider-http",
             "purl": "",
-            "version": "3.972.72"
+            "version": "3.972.73"
           },
           {
             "name": "@aws-sdk/credential-provider-ini",
             "purl": "",
-            "version": "3.973.15"
+            "version": "3.973.16"
           },
           {
             "name": "@aws-sdk/credential-provider-login",
             "purl": "",
-            "version": "3.972.77"
+            "version": "3.972.78"
           },
           {
             "name": "@aws-sdk/credential-provider-node",
             "purl": "",
-            "version": "3.972.82"
+            "version": "3.972.83"
           },
           {
             "name": "@aws-sdk/credential-provider-process",
             "purl": "",
-            "version": "3.972.70"
+            "version": "3.972.71"
           },
           {
             "name": "@aws-sdk/credential-provider-sso",
             "purl": "",
-            "version": "3.973.14"
+            "version": "3.973.15"
           },
           {
             "name": "@aws-sdk/credential-provider-web-identity",
             "purl": "",
-            "version": "3.972.76"
+            "version": "3.972.77"
           },
           {
             "name": "@aws-sdk/credential-providers",
             "purl": "",
-            "version": "3.1124.0"
+            "version": "3.1136.0"
           },
           {
             "name": "@aws-sdk/nested-clients",
             "purl": "",
-            "version": "3.997.44"
+            "version": "3.997.45"
           },
           {
             "name": "@aws-sdk/signature-v4-multi-region",
@@ -1721,7 +1721,7 @@
           {
             "name": "@aws-sdk/token-providers",
             "purl": "",
-            "version": "3.1116.0"
+            "version": "3.1129.0"
           },
           {
             "name": "@aws-sdk/types",
@@ -1806,7 +1806,7 @@
           {
             "name": "@azure/msal-browser",
             "purl": "",
-            "version": "5.20.0"
+            "version": "5.22.0"
           },
           {
             "name": "@azure/msal-common",
@@ -1866,7 +1866,7 @@
           {
             "name": "@mongodb-js/saslprep",
             "purl": "",
-            "version": "1.5.0"
+            "version": "1.5.4"
           },
           {
             "name": "@my-scope/package-a",
@@ -2011,7 +2011,7 @@
           {
             "name": "@smithy/core",
             "purl": "",
-            "version": "3.33.3"
+            "version": "3.34.1"
           },
           {
             "name": "@smithy/credential-provider-imds",
@@ -2021,12 +2021,12 @@
           {
             "name": "@smithy/fetch-http-handler",
             "purl": "",
-            "version": "5.7.2"
+            "version": "5.8.0"
           },
           {
             "name": "@smithy/node-http-handler",
             "purl": "",
-            "version": "4.11.3"
+            "version": "4.12.1"
           },
           {
             "name": "@smithy/signature-v4",
@@ -2036,7 +2036,7 @@
           {
             "name": "@smithy/types",
             "purl": "",
-            "version": "4.17.2"
+            "version": "4.18.0"
           },
           {
             "name": "@socket.io/component-emitter",
@@ -2361,7 +2361,7 @@
           {
             "name": "body-parser",
             "purl": "",
-            "version": "1.20.6"
+            "version": "1.20.8"
           },
           {
             "name": "boolbase",
@@ -2376,7 +2376,7 @@
           {
             "name": "brace-expansion",
             "purl": "",
-            "version": "1.1.18"
+            "version": "1.1.21"
           },
           {
             "name": "bson",
@@ -2536,7 +2536,7 @@
           {
             "name": "compression",
             "purl": "",
-            "version": "1.8.1"
+            "version": "1.8.2"
           },
           {
             "name": "concat-map",
@@ -2776,7 +2776,7 @@
           {
             "name": "engine.io",
             "purl": "",
-            "version": "6.6.9"
+            "version": "6.6.10"
           },
           {
             "name": "engine.io-client",
@@ -2861,7 +2861,7 @@
           {
             "name": "express",
             "purl": "",
-            "version": "4.22.2"
+            "version": "4.22.3"
           },
           {
             "name": "express-basic-auth",
@@ -3136,7 +3136,7 @@
           {
             "name": "ip-address",
             "purl": "",
-            "version": "10.7.0"
+            "version": "10.7.2"
           },
           {
             "name": "ipaddr.js",
@@ -3146,7 +3146,7 @@
           {
             "name": "is-core-module",
             "purl": "",
-            "version": "2.16.2"
+            "version": "2.17.0"
           },
           {
             "name": "is-docker",
@@ -3536,12 +3536,12 @@
           {
             "name": "nan",
             "purl": "",
-            "version": "2.28.0"
+            "version": "2.29.0"
           },
           {
             "name": "nanoid",
             "purl": "",
-            "version": "3.3.18"
+            "version": "3.3.19"
           },
           {
             "name": "native-duplexpair",
@@ -3866,7 +3866,7 @@
           {
             "name": "proxy-addr",
             "purl": "",
-            "version": "2.0.7"
+            "version": "2.0.8"
           },
           {
             "name": "proxy-from-env",
@@ -4116,7 +4116,7 @@
           {
             "name": "socks",
             "purl": "",
-            "version": "2.8.9"
+            "version": "2.8.10"
           },
           {
             "name": "socks-proxy-agent",
@@ -4251,7 +4251,7 @@
           {
             "name": "tldts-core",
             "purl": "",
-            "version": "7.4.11"
+            "version": "7.4.13"
           },
           {
             "name": "toidentifier",
@@ -4296,7 +4296,7 @@
           {
             "name": "undici",
             "purl": "",
-            "version": "6.28.0"
+            "version": "6.28.1"
           },
           {
             "name": "undici-types",
@@ -4331,7 +4331,7 @@
           {
             "name": "uptime-kuma",
             "purl": "",
-            "version": "2.5.5"
+            "version": "2.5.6"
           },
           {
             "name": "url-parse",
