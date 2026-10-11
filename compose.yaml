@@ -12,11 +12,38 @@ x-daemonless:
   raw_sockets: true
   appjail: true
 
+  # uptime-kuma is the one people open; the database the Database choice adds
+  # stays on the stack's private network.
+  networking:
+    uptime-kuma: default
+    "*": private
+
+  choices:
+    database:
+      kind: database
+      offers: [sqlite, mariadb, external]
+      default: sqlite
+      env:
+        type: UPTIME_KUMA_DB_TYPE
+        host: UPTIME_KUMA_DB_HOSTNAME
+        port: UPTIME_KUMA_DB_PORT
+        user: UPTIME_KUMA_DB_USERNAME
+        password: UPTIME_KUMA_DB_PASSWORD
+        name: UPTIME_KUMA_DB_NAME
+      types:
+        mariadb: mariadb
+
   docs:
     env:
       PUID: "User ID for the application process"
       PGID: "Group ID for the application process"
       TZ: "Timezone for the container"
+      UPTIME_KUMA_DB_TYPE: "sqlite or mariadb; set by the Database choice. Empty: uptime-kuma asks on first run"
+      UPTIME_KUMA_DB_HOSTNAME: "MariaDB host (Database choice)"
+      UPTIME_KUMA_DB_PORT: "MariaDB port (Database choice)"
+      UPTIME_KUMA_DB_USERNAME: "MariaDB user (Database choice)"
+      UPTIME_KUMA_DB_PASSWORD: "MariaDB password (Database choice)"
+      UPTIME_KUMA_DB_NAME: "MariaDB database name (Database choice)"
     volumes:
       /config: "Data directory (database, settings)"
     ports:
@@ -27,7 +54,7 @@ services:
     image: ghcr.io/daemonless/uptime-kuma:latest
     container_name: uptime-kuma
     restart: unless-stopped
-    
+
     annotations:
       org.freebsd.jail.allow.raw_sockets: "true"
 
@@ -39,6 +66,12 @@ services:
       - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
       - DATA_DIR=/config
+      - UPTIME_KUMA_DB_TYPE=${UPTIME_KUMA_DB_TYPE:-}
+      - UPTIME_KUMA_DB_HOSTNAME=${UPTIME_KUMA_DB_HOSTNAME:-}
+      - UPTIME_KUMA_DB_PORT=${UPTIME_KUMA_DB_PORT:-3306}
+      - UPTIME_KUMA_DB_USERNAME=${UPTIME_KUMA_DB_USERNAME:-}
+      - UPTIME_KUMA_DB_PASSWORD=${UPTIME_KUMA_DB_PASSWORD:-}
+      - UPTIME_KUMA_DB_NAME=${UPTIME_KUMA_DB_NAME:-}
 
     volumes:
       - /path/to/containers/uptime-kuma:/config
