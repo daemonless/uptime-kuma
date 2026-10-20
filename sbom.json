@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-09T23:18:52Z",
+  "generated": "2026-10-20T22:32:47Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.5.6",
       "arch": "amd64",
-      "generated": "2026-10-09T23:16:00Z",
+      "generated": "2026-10-20T22:29:53Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -203,7 +203,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -331,7 +331,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -348,7 +348,7 @@
               "MPL11"
             ],
             "name": "chromium",
-            "version": "154.0.8037.57"
+            "version": "154.0.8037.57_2"
           },
           {
             "licenses": [
@@ -377,7 +377,7 @@
               "CUPS"
             ],
             "name": "cups",
-            "version": "2.4.19_2"
+            "version": "2.4.20"
           },
           {
             "licenses": [
@@ -433,7 +433,7 @@
               "MIT"
             ],
             "name": "ebur128",
-            "version": "0.1.10_16"
+            "version": "0.1.10_17"
           },
           {
             "licenses": [
@@ -454,21 +454,21 @@
               "MIT"
             ],
             "name": "expat",
-            "version": "2.8.5"
+            "version": "2.9.0"
           },
           {
             "licenses": [
               "GPLv2+"
             ],
             "name": "fftw3",
-            "version": "3.3.10_5"
+            "version": "3.3.11"
           },
           {
             "licenses": [
               "GPLv2+"
             ],
             "name": "fftw3-float",
-            "version": "3.3.10_5"
+            "version": "3.3.11"
           },
           {
             "licenses": [
@@ -485,7 +485,7 @@
               "MIT"
             ],
             "name": "fontconfig",
-            "version": "2.17.1,1"
+            "version": "2.18.3,1"
           },
           {
             "licenses": [
@@ -560,7 +560,7 @@
               "LGPL21"
             ],
             "name": "graphite2",
-            "version": "1.3.15"
+            "version": "1.3.15_1"
           },
           {
             "licenses": [
@@ -574,14 +574,14 @@
               "LGPL20+"
             ],
             "name": "gstreamer1",
-            "version": "1.28.6_1"
+            "version": "1.28.8_1"
           },
           {
             "licenses": [
               "LGPL20"
             ],
             "name": "gstreamer1-plugins",
-            "version": "1.28.6"
+            "version": "1.28.8"
           },
           {
             "licenses": [
@@ -602,14 +602,14 @@
               "MIT"
             ],
             "name": "harfbuzz",
-            "version": "14.2.1"
+            "version": "14.5.1"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "harfbuzz-icu",
-            "version": "14.2.1"
+            "version": "14.5.1"
           },
           {
             "licenses": [
@@ -624,7 +624,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
@@ -1080,7 +1080,7 @@
               "LGPL20"
             ],
             "name": "librsvg2-rust",
-            "version": "2.62.3_2"
+            "version": "2.62.3_3"
           },
           {
             "licenses": [
@@ -1256,7 +1256,7 @@
               "MIT"
             ],
             "name": "node22",
-            "version": "22.23.2_1"
+            "version": "22.23.2_2"
           },
           {
             "licenses": [
@@ -1312,7 +1312,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -1326,7 +1326,7 @@
               "BSD2CLAUSE"
             ],
             "name": "openh264",
-            "version": "2.6.0,2"
+            "version": "2.6.0_1,2"
           },
           {
             "licenses": [
@@ -1406,7 +1406,7 @@
               "Libpng"
             ],
             "name": "png",
-            "version": "1.6.58"
+            "version": "1.6.59_1"
           },
           {
             "licenses": [
@@ -1471,7 +1471,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.14_1"
+            "version": "3.12.15"
           },
           {
             "licenses": [
@@ -1507,7 +1507,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.1"
+            "version": "5.0.5"
           },
           {
             "licenses": [
@@ -1557,7 +1557,7 @@
               "APACHE20"
             ],
             "name": "spirv-tools",
-            "version": "2026.4.r2"
+            "version": "2026.4"
           },
           {
             "licenses": [
@@ -1620,7 +1620,7 @@
               "MIT"
             ],
             "name": "xorgproto",
-            "version": "2025.1"
+            "version": "2026.1"
           },
           {
             "licenses": [

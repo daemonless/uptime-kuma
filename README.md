@@ -30,32 +30,180 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 
 ### Podman Compose
 
-```yaml
+**Database.** Where the app keeps its data. The default needs nothing else running.
+
+#### SQLite (default)
+
+A file in the app's config folder. Right for one person, nothing extra to run.
+
+**1.** Save as `.env` and fill in what is empty:
+
+```env { data-zip-bundle="uptime-kuma-podman" data-zip-filename=".env" }
+
+```
+
+**2.** Save as `compose.yaml`:
+
+```yaml { data-zip-bundle="uptime-kuma-podman" data-zip-filename="compose.yaml" }
+name: uptime-kuma
+
 services:
   uptime-kuma:
-    image: "ghcr.io/daemonless/uptime-kuma:latest"
+    image: ghcr.io/daemonless/uptime-kuma:latest
     container_name: uptime-kuma
+    restart: unless-stopped
+
+    annotations:
+      org.freebsd.jail.allow.raw_sockets: "true"
+
     environment:
-      - PUID=1000  # User ID for the application process
-      - PGID=1000  # Group ID for the application process
-      - TZ=UTC  # Timezone for the container
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
       - UPTIME_KUMA_IS_CONTAINER=1
       - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
       - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
       - DATA_DIR=/config
+      - UPTIME_KUMA_DB_TYPE=${UPTIME_KUMA_DB_TYPE:-}
+      - UPTIME_KUMA_DB_HOSTNAME=${UPTIME_KUMA_DB_HOSTNAME:-}
+      - UPTIME_KUMA_DB_PORT=${UPTIME_KUMA_DB_PORT:-3306}
+      - UPTIME_KUMA_DB_USERNAME=${UPTIME_KUMA_DB_USERNAME:-}
+      - UPTIME_KUMA_DB_PASSWORD=${UPTIME_KUMA_DB_PASSWORD:-}
+      - UPTIME_KUMA_DB_NAME=${UPTIME_KUMA_DB_NAME:-}
+
     volumes:
-      - "/containers/uptime-kuma:/config"
+      - /path/to/containers/uptime-kuma:/config
+
     ports:
       - "3001:3001"
-    annotations:
-      org.freebsd.jail.allow.raw_sockets: "true"
-    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
-    restart: always
 ```
 
-Save as `compose.yaml`, then run `podman-compose up -d`.
+Then run `podman-compose up -d`.
+
+#### MariaDB
+
+One more container, its data in its own folder. If you already know MariaDB, or the app prefers it.
+
+**1.** Save as `.env` and fill in what is empty:
+
+```env { data-zip-bundle="uptime-kuma-podman-database-mariadb" data-zip-filename=".env" }
+# Database: MariaDB
+UPTIME_KUMA_DB_TYPE=mariadb
+UPTIME_KUMA_DB_HOSTNAME=mariadb
+UPTIME_KUMA_DB_PORT=3306
+UPTIME_KUMA_DB_USERNAME=uptime-kuma
+UPTIME_KUMA_DB_PASSWORD=  # set one
+UPTIME_KUMA_DB_NAME=uptime-kuma
+DATABASE_LOCATION=/containers/uptime-kuma/mariadb
+```
+
+**2.** Save as `compose.yaml`:
+
+```yaml { data-zip-bundle="uptime-kuma-podman-database-mariadb" data-zip-filename="compose.yaml" }
+name: uptime-kuma
+
+services:
+  uptime-kuma:
+    depends_on: [mariadb]
+    image: ghcr.io/daemonless/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+
+    annotations:
+      org.freebsd.jail.allow.raw_sockets: "true"
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - UPTIME_KUMA_IS_CONTAINER=1
+      - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - DATA_DIR=/config
+      - UPTIME_KUMA_DB_TYPE=${UPTIME_KUMA_DB_TYPE:-}
+      - UPTIME_KUMA_DB_HOSTNAME=${UPTIME_KUMA_DB_HOSTNAME:-}
+      - UPTIME_KUMA_DB_PORT=${UPTIME_KUMA_DB_PORT:-3306}
+      - UPTIME_KUMA_DB_USERNAME=${UPTIME_KUMA_DB_USERNAME:-}
+      - UPTIME_KUMA_DB_PASSWORD=${UPTIME_KUMA_DB_PASSWORD:-}
+      - UPTIME_KUMA_DB_NAME=${UPTIME_KUMA_DB_NAME:-}
+
+    volumes:
+      - /path/to/containers/uptime-kuma:/config
+
+    ports:
+      - "3001:3001"
+  mariadb:
+    image: ghcr.io/daemonless/mariadb:11.4
+    restart: always
+    environment:
+      - MYSQL_USER=${UPTIME_KUMA_DB_USERNAME}
+      - MYSQL_PASSWORD=${UPTIME_KUMA_DB_PASSWORD}
+      - MYSQL_DATABASE=${UPTIME_KUMA_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${UPTIME_KUMA_DB_PASSWORD}
+    volumes:
+      - "${DATABASE_LOCATION}:/config"
+```
+
+Then run `podman-compose up -d`.
+
+#### Your own
+
+A database you already run, here or on another machine. Nothing extra runs; you give the address and the account.
+
+**1.** Save as `.env` and fill in Kind, Host, Port, User, Password, Database:
+
+```env { data-zip-bundle="uptime-kuma-podman-database-external" data-zip-filename=".env" }
+# Database: Your own
+UPTIME_KUMA_DB_TYPE=  # Kind: mariadb
+UPTIME_KUMA_DB_HOSTNAME=  # Host
+UPTIME_KUMA_DB_PORT=  # Port
+UPTIME_KUMA_DB_USERNAME=  # User
+UPTIME_KUMA_DB_PASSWORD=  # Password
+UPTIME_KUMA_DB_NAME=  # Database
+```
+
+**2.** Save as `compose.yaml`:
+
+```yaml { data-zip-bundle="uptime-kuma-podman-database-external" data-zip-filename="compose.yaml" }
+name: uptime-kuma
+
+services:
+  uptime-kuma:
+    image: ghcr.io/daemonless/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+
+    annotations:
+      org.freebsd.jail.allow.raw_sockets: "true"
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - UPTIME_KUMA_IS_CONTAINER=1
+      - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - DATA_DIR=/config
+      - UPTIME_KUMA_DB_TYPE=${UPTIME_KUMA_DB_TYPE:-}
+      - UPTIME_KUMA_DB_HOSTNAME=${UPTIME_KUMA_DB_HOSTNAME:-}
+      - UPTIME_KUMA_DB_PORT=${UPTIME_KUMA_DB_PORT:-3306}
+      - UPTIME_KUMA_DB_USERNAME=${UPTIME_KUMA_DB_USERNAME:-}
+      - UPTIME_KUMA_DB_PASSWORD=${UPTIME_KUMA_DB_PASSWORD:-}
+      - UPTIME_KUMA_DB_NAME=${UPTIME_KUMA_DB_NAME:-}
+
+    volumes:
+      - /path/to/containers/uptime-kuma:/config
+
+    ports:
+      - "3001:3001"
+```
+
+Then run `podman-compose up -d`.
 
 ### AppJail Director
+
+#### SQLite (default)
+
 **.env**:
 
 ```
@@ -69,6 +217,12 @@ UPTIME_KUMA_IS_CONTAINER=1
 UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
 PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 DATA_DIR=/config
+UPTIME_KUMA_DB_TYPE=sqlite
+UPTIME_KUMA_DB_HOSTNAME=
+UPTIME_KUMA_DB_PORT=3306
+UPTIME_KUMA_DB_USERNAME=
+UPTIME_KUMA_DB_PASSWORD=<UPTIME_KUMA_DB_PASSWORD>
+UPTIME_KUMA_DB_NAME=
 ```
 
 **appjail-director.yml**:
@@ -96,6 +250,12 @@ services:
         - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: !ENV '${UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC}'
         - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: !ENV '${PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD}'
         - DATA_DIR: !ENV '${DATA_DIR}'
+        - UPTIME_KUMA_DB_TYPE: !ENV '${UPTIME_KUMA_DB_TYPE}'
+        - UPTIME_KUMA_DB_HOSTNAME: !ENV '${UPTIME_KUMA_DB_HOSTNAME}'
+        - UPTIME_KUMA_DB_PORT: !ENV '${UPTIME_KUMA_DB_PORT}'
+        - UPTIME_KUMA_DB_USERNAME: !ENV '${UPTIME_KUMA_DB_USERNAME}'
+        - UPTIME_KUMA_DB_PASSWORD: !ENV '${UPTIME_KUMA_DB_PASSWORD}'
+        - UPTIME_KUMA_DB_NAME: !ENV '${UPTIME_KUMA_DB_NAME}'
     volumes:
       - uptime-kuma: /config
 volumes:
@@ -129,37 +289,196 @@ allow.raw_sockets
 
 Save the files above, then run `appjail-director up`.
 
+#### MariaDB
 
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
+**.env**:
 
-### Bastille
+```
+# .env
 
-> [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
-
-```yaml
-services:
-  uptime-kuma:
-    name: uptime-kuma
-    image: "ghcr.io/daemonless/uptime-kuma:latest"
-    network:
-      - mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-      - UPTIME_KUMA_IS_CONTAINER=1
-      - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
-      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
-      - DATA_DIR=/config
-    volumes:
-      - "/containers/uptime-kuma:/config"
+DIRECTOR_PROJECT=uptime-kuma
+PUID=1000
+PGID=1000
+TZ=UTC
+UPTIME_KUMA_IS_CONTAINER=1
+UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+DATA_DIR=/config
+UPTIME_KUMA_DB_TYPE=mariadb
+UPTIME_KUMA_DB_HOSTNAME=uptime_kuma_mariadb
+UPTIME_KUMA_DB_PORT=3306
+UPTIME_KUMA_DB_USERNAME=uptime-kuma
+UPTIME_KUMA_DB_PASSWORD=
+UPTIME_KUMA_DB_NAME=uptime-kuma
+DATABASE_LOCATION=/containers/uptime-kuma/mariadb
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`.
+**appjail-director.yml**:
+
+```yaml
+# appjail-director.yml
+
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  uptime-kuma:
+    name: uptime_kuma
+    options:
+      - container: 'args:--pull'
+      - expose: '3001:3001 proto:tcp'
+      - template: !ENV '${PWD}/template.conf'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+        - UPTIME_KUMA_IS_CONTAINER: !ENV '${UPTIME_KUMA_IS_CONTAINER}'
+        - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: !ENV '${UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC}'
+        - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: !ENV '${PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD}'
+        - DATA_DIR: !ENV '${DATA_DIR}'
+        - UPTIME_KUMA_DB_TYPE: !ENV '${UPTIME_KUMA_DB_TYPE}'
+        - UPTIME_KUMA_DB_HOSTNAME: !ENV '${UPTIME_KUMA_DB_HOSTNAME}'
+        - UPTIME_KUMA_DB_PORT: !ENV '${UPTIME_KUMA_DB_PORT}'
+        - UPTIME_KUMA_DB_USERNAME: !ENV '${UPTIME_KUMA_DB_USERNAME}'
+        - UPTIME_KUMA_DB_PASSWORD: !ENV '${UPTIME_KUMA_DB_PASSWORD}'
+        - UPTIME_KUMA_DB_NAME: !ENV '${UPTIME_KUMA_DB_NAME}'
+    volumes:
+      - uptime-kuma: /config
+  mariadb:
+    name: uptime_kuma_mariadb
+    priority: 10
+    options:
+      - from: ghcr.io/daemonless/mariadb:11.4
+      - template: !ENV '${PWD}/template.conf'
+    oci:
+      environment:
+        - MYSQL_USER: !ENV '${UPTIME_KUMA_DB_USERNAME}'
+        - MYSQL_PASSWORD: !ENV '${UPTIME_KUMA_DB_PASSWORD}'
+        - MYSQL_DATABASE: !ENV '${UPTIME_KUMA_DB_NAME}'
+        - MYSQL_ROOT_PASSWORD: !ENV '${UPTIME_KUMA_DB_PASSWORD}'
+    volumes:
+      - database: /config
+volumes:
+  uptime-kuma:
+    device: '/containers/uptime-kuma'
+  database:
+    device: !ENV '${DATABASE_LOCATION}'
+```
+
+**Makejail**:
+
+```
+# Makejail
+
+ARG tag=latest
+
+OPTION container=boot
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/uptime-kuma:${tag}
+```
+
+**template.conf**:
+
+```
+# template.conf
+
+exec.start: "/bin/sh /etc/rc"
+exec.stop: "/bin/sh /etc/rc.shutdown jail"
+mount.devfs
+persist
+allow.raw_sockets
+```
+
+Save the files above, then run `appjail-director up`.
+
+#### Your own
+
+**.env**:
+
+```
+# .env
+
+DIRECTOR_PROJECT=uptime-kuma
+PUID=1000
+PGID=1000
+TZ=UTC
+UPTIME_KUMA_IS_CONTAINER=1
+UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC=1
+PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+DATA_DIR=/config
+UPTIME_KUMA_DB_TYPE=
+UPTIME_KUMA_DB_HOSTNAME=
+UPTIME_KUMA_DB_PORT=
+UPTIME_KUMA_DB_USERNAME=
+UPTIME_KUMA_DB_PASSWORD=
+UPTIME_KUMA_DB_NAME=
+```
+
+**appjail-director.yml**:
+
+```yaml
+# appjail-director.yml
+
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  uptime-kuma:
+    name: uptime_kuma
+    options:
+      - container: 'args:--pull'
+      - expose: '3001:3001 proto:tcp'
+      - template: !ENV '${PWD}/template.conf'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+        - UPTIME_KUMA_IS_CONTAINER: !ENV '${UPTIME_KUMA_IS_CONTAINER}'
+        - UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC: !ENV '${UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC}'
+        - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: !ENV '${PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD}'
+        - DATA_DIR: !ENV '${DATA_DIR}'
+        - UPTIME_KUMA_DB_TYPE: !ENV '${UPTIME_KUMA_DB_TYPE}'
+        - UPTIME_KUMA_DB_HOSTNAME: !ENV '${UPTIME_KUMA_DB_HOSTNAME}'
+        - UPTIME_KUMA_DB_PORT: !ENV '${UPTIME_KUMA_DB_PORT}'
+        - UPTIME_KUMA_DB_USERNAME: !ENV '${UPTIME_KUMA_DB_USERNAME}'
+        - UPTIME_KUMA_DB_PASSWORD: !ENV '${UPTIME_KUMA_DB_PASSWORD}'
+        - UPTIME_KUMA_DB_NAME: !ENV '${UPTIME_KUMA_DB_NAME}'
+    volumes:
+      - uptime-kuma: /config
+volumes:
+  uptime-kuma:
+    device: '/containers/uptime-kuma'
+```
+
+**Makejail**:
+
+```
+# Makejail
+
+ARG tag=latest
+
+OPTION container=boot
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/uptime-kuma:${tag}
+```
+
+**template.conf**:
+
+```
+# template.conf
+
+exec.start: "/bin/sh /etc/rc"
+exec.stop: "/bin/sh /etc/rc.shutdown jail"
+mount.devfs
+persist
+allow.raw_sockets
+```
+
+Save the files above, then run `appjail-director up`.
 
 Access at: `http://localhost:3001`
 
@@ -176,6 +495,12 @@ Access at: `http://localhost:3001`
 | `UPTIME_KUMA_ALLOW_ALL_CHROME_EXEC` | `1` |  |
 | `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD` | `1` |  |
 | `DATA_DIR` | `/config` |  |
+| `UPTIME_KUMA_DB_TYPE` | `` | sqlite or mariadb; set by the Database choice. Empty: uptime-kuma asks on first run |
+| `UPTIME_KUMA_DB_HOSTNAME` | `` | MariaDB host (Database choice) |
+| `UPTIME_KUMA_DB_PORT` | `3306` | MariaDB port (Database choice) |
+| `UPTIME_KUMA_DB_USERNAME` | `` | MariaDB user (Database choice) |
+| `UPTIME_KUMA_DB_PASSWORD` | `<UPTIME_KUMA_DB_PASSWORD>` | MariaDB password (Database choice) |
+| `UPTIME_KUMA_DB_NAME` | `` | MariaDB database name (Database choice) |
 
 ### Volumes
 
