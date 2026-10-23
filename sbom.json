@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T07:10:09Z",
+  "generated": "2026-10-23T08:34:13Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.5.7",
       "arch": "amd64",
-      "generated": "2026-10-23T07:07:59Z",
+      "generated": "2026-10-23T08:25:00Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -441,13 +441,6 @@
             ],
             "name": "espeak-ng",
             "version": "1.52.0_1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -1489,13 +1482,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
               "GPLv2"
             ],
             "name": "shared-mime-info",
@@ -1508,13 +1494,6 @@
             ],
             "name": "simdjson",
             "version": "5.0.5"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
           },
           {
             "licenses": [
@@ -4503,7 +4482,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 228,
+        "freebsd": 225,
         "go": 0,
         "java": 0,
         "node": 564,
@@ -4511,7 +4490,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 797
+        "total": 794
       }
     }
   }
