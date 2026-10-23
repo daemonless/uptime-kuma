@@ -8,7 +8,7 @@
 # Multi-stage build: compile with npm, run with node + chromium
 
 ARG BASE_VERSION=15-latest
-FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION} AS builder
 
 # Build dependencies (including C compiler for native modules like sqlite3)
 RUN pkg update && pkg install -y \
