@@ -4,4 +4,4 @@ export DATA_DIR=/config
 export NODE_ENV=production
 
 cd /app/uptime-kuma
-exec s6-setuidgid bsd node server/server.js
+exec node server/server.js

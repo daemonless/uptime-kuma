@@ -30,7 +30,7 @@ RUN sed -i '' "s/process.platform === 'linux'/process.platform === 'freebsd'/" \
     node_modules/playwright-core/lib/server/registry/index.js
 
 # Production image
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node22"
@@ -101,7 +101,9 @@ RUN mkdir -p /config && chown bsd:bsd /config
 
 # Copy service files
 COPY root/ /
-RUN chmod +x /etc/services.d/*/run /etc/cont-init.d/* 2>/dev/null || true
+RUN chmod +x /daemonless/libexec/uptime-kuma /daemonless/init.d/*
+
+CMD ["/daemonless/libexec/uptime-kuma"]
 
 # Environment for Chromium support
 ENV UPTIME_KUMA_IS_CONTAINER=1
