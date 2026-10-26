@@ -36,13 +36,7 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 
 A file in the app's config folder. Right for one person, nothing extra to run.
 
-**1.** Save as `.env` and fill in what is empty:
-
-```env { data-zip-bundle="uptime-kuma-podman" data-zip-filename=".env" }
-
-```
-
-**2.** Save as `compose.yaml`:
+Save as `compose.yaml`:
 
 ```yaml { data-zip-bundle="uptime-kuma-podman" data-zip-filename="compose.yaml" }
 name: uptime-kuma
@@ -479,8 +473,7 @@ allow.raw_sockets
 ```
 
 Save the files above, then run `appjail-director up`.
-
-Access at: `http://localhost:3001`
+Open `http://<server>:3001` from another machine (the server's own browser can't use a published port).
 
 ## Parameters
 
