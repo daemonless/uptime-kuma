@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-31T23:19:27Z",
+  "generated": "2026-11-04T15:17:45Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.5.9",
       "arch": "amd64",
-      "generated": "2026-10-31T23:16:55Z",
+      "generated": "2026-11-04T15:15:38Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -270,16 +270,16 @@
           },
           {
             "licenses": [
-              "CC-BY-SA-3.0",
-              "LGPL3"
+              "LGPL3",
+              "CC-BY-SA-3.0"
             ],
             "name": "adwaita-icon-theme",
             "version": "47.0"
           },
           {
             "licenses": [
-              "CC-BY-SA-3.0",
-              "LGPL3"
+              "LGPL3",
+              "CC-BY-SA-3.0"
             ],
             "name": "adwaita-icon-theme-legacy",
             "version": "46.2"
@@ -433,7 +433,7 @@
               "MIT"
             ],
             "name": "ebur128",
-            "version": "0.1.10_17"
+            "version": "0.1.11"
           },
           {
             "licenses": [
@@ -493,7 +493,7 @@
               "LGPL21"
             ],
             "name": "fribidi",
-            "version": "1.0.17"
+            "version": "1.0.18"
           },
           {
             "licenses": [
@@ -530,6 +530,13 @@
             ],
             "name": "glib",
             "version": "2.88.3,2"
+          },
+          {
+            "licenses": [
+              "LGPL3"
+            ],
+            "name": "gmp",
+            "version": "6.3.0"
           },
           {
             "licenses": [
@@ -602,7 +609,7 @@
               "MIT"
             ],
             "name": "harfbuzz-icu",
-            "version": "14.6.0"
+            "version": "15.0.0"
           },
           {
             "licenses": [
@@ -850,6 +857,13 @@
             "licenses": [
               "MIT"
             ],
+            "name": "libXv",
+            "version": "1.0.13,1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
             "name": "libXxf86vm",
             "version": "1.1.7"
           },
@@ -1073,7 +1087,7 @@
               "LGPL20"
             ],
             "name": "librsvg2-rust",
-            "version": "2.62.3_3"
+            "version": "2.63.4"
           },
           {
             "licenses": [
@@ -1232,10 +1246,24 @@
           },
           {
             "licenses": [
+              "LGPL3+"
+            ],
+            "name": "mpc",
+            "version": "1.4.1"
+          },
+          {
+            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "mpdecimal",
             "version": "4.0.1"
+          },
+          {
+            "licenses": [
+              "LGPL3+"
+            ],
+            "name": "mpfr",
+            "version": "4.2.2,1"
           },
           {
             "licenses": [
@@ -1493,7 +1521,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.5"
+            "version": "5.1.0"
           },
           {
             "licenses": [
@@ -1543,7 +1571,14 @@
               "PD"
             ],
             "name": "sqlite3",
-            "version": "3.53.4,1"
+            "version": "3.54.1,1"
+          },
+          {
+            "licenses": [
+              "TclTk"
+            ],
+            "name": "tcl86",
+            "version": "8.6.18_1"
           },
           {
             "licenses": [
@@ -1592,7 +1627,7 @@
               "MIT"
             ],
             "name": "xkeyboard-config",
-            "version": "2.48"
+            "version": "2.49"
           },
           {
             "licenses": [
@@ -4477,7 +4512,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 225,
+        "freebsd": 230,
         "go": 0,
         "java": 0,
         "node": 563,
@@ -4485,7 +4520,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 793
+        "total": 798
       }
     }
   }
