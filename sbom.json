@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-04T15:17:45Z",
+  "generated": "2026-11-10T15:24:40Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
       "app_version": "2.5.9",
       "arch": "amd64",
-      "generated": "2026-11-04T15:15:38Z",
+      "generated": "2026-11-10T15:21:43Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -270,16 +270,16 @@
           },
           {
             "licenses": [
-              "LGPL3",
-              "CC-BY-SA-3.0"
+              "CC-BY-SA-3.0",
+              "LGPL3"
             ],
             "name": "adwaita-icon-theme",
             "version": "47.0"
           },
           {
             "licenses": [
-              "LGPL3",
-              "CC-BY-SA-3.0"
+              "CC-BY-SA-3.0",
+              "LGPL3"
             ],
             "name": "adwaita-icon-theme-legacy",
             "version": "46.2"
@@ -343,12 +343,12 @@
           },
           {
             "licenses": [
-              "BSD3CLAUSE",
               "LGPL21",
+              "BSD3CLAUSE",
               "MPL11"
             ],
             "name": "chromium",
-            "version": "156.0.8078.47_1"
+            "version": "156.0.8078.79"
           },
           {
             "licenses": [
@@ -447,7 +447,7 @@
               "MIT"
             ],
             "name": "expat",
-            "version": "2.9.0"
+            "version": "2.10.0"
           },
           {
             "licenses": [
@@ -465,9 +465,9 @@
           },
           {
             "licenses": [
+              "LGPL21",
               "GPLv2",
               "BSD3CLAUSE",
-              "LGPL21",
               "GFDL"
             ],
             "name": "flac",
@@ -533,13 +533,6 @@
           },
           {
             "licenses": [
-              "LGPL3"
-            ],
-            "name": "gmp",
-            "version": "6.3.0"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "gnome_subr",
@@ -556,8 +549,8 @@
           {
             "licenses": [
               "MPL20",
-              "GPLv2",
-              "LGPL21"
+              "LGPL21",
+              "GPLv2"
             ],
             "name": "graphite2",
             "version": "1.3.15_1"
@@ -574,14 +567,14 @@
               "LGPL20+"
             ],
             "name": "gstreamer1",
-            "version": "1.28.8_1"
+            "version": "1.28.9"
           },
           {
             "licenses": [
               "LGPL20"
             ],
             "name": "gstreamer1-plugins",
-            "version": "1.28.8"
+            "version": "1.28.9"
           },
           {
             "licenses": [
@@ -602,7 +595,7 @@
               "MIT"
             ],
             "name": "harfbuzz",
-            "version": "14.6.0"
+            "version": "15.0.0"
           },
           {
             "licenses": [
@@ -624,7 +617,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.412,1"
+            "version": "0.413,1"
           },
           {
             "licenses": [
@@ -649,8 +642,8 @@
           },
           {
             "licenses": [
-              "GPLv2",
-              "LGPL21"
+              "LGPL21",
+              "GPLv2"
             ],
             "name": "jackit",
             "version": "1.9.22_3"
@@ -857,13 +850,6 @@
             "licenses": [
               "MIT"
             ],
-            "name": "libXv",
-            "version": "1.0.13,1"
-          },
-          {
-            "licenses": [
-              "MIT"
-            ],
             "name": "libXxf86vm",
             "version": "1.1.7"
           },
@@ -984,8 +970,8 @@
           },
           {
             "licenses": [
-              "GPLv2",
-              "LGPL21"
+              "LGPL21",
+              "GPLv2"
             ],
             "name": "libgpg-error",
             "version": "1.61"
@@ -1214,7 +1200,7 @@
               "REGEX"
             ],
             "name": "llvm19",
-            "version": "19.1.7_4"
+            "version": "19.1.7_5"
           },
           {
             "licenses": [
@@ -1246,24 +1232,10 @@
           },
           {
             "licenses": [
-              "LGPL3+"
-            ],
-            "name": "mpc",
-            "version": "1.4.1"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "mpdecimal",
             "version": "4.0.1"
-          },
-          {
-            "licenses": [
-              "LGPL3+"
-            ],
-            "name": "mpfr",
-            "version": "4.2.2,1"
           },
           {
             "licenses": [
@@ -1333,7 +1305,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.132"
+            "version": "3.133"
           },
           {
             "licenses": [
@@ -1369,7 +1341,7 @@
               "LGPL21+"
             ],
             "name": "pango",
-            "version": "1.57.1"
+            "version": "1.58.2"
           },
           {
             "licenses": [
@@ -1380,8 +1352,8 @@
           },
           {
             "licenses": [
-              "BSD3CLAUSE",
-              "GPLv2+"
+              "GPLv2+",
+              "BSD3CLAUSE"
             ],
             "name": "pciids",
             "version": "20260922"
@@ -1420,7 +1392,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.0"
           },
           {
             "licenses": [
@@ -1521,7 +1493,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.1.0"
+            "version": "5.1.1"
           },
           {
             "licenses": [
@@ -1532,8 +1504,8 @@
           },
           {
             "licenses": [
-              "GPLv2",
-              "LGPL21"
+              "LGPL21",
+              "GPLv2"
             ],
             "name": "speech-dispatcher",
             "version": "0.12.1_1"
@@ -1557,7 +1529,7 @@
               "NCSA"
             ],
             "name": "spirv-llvm-translator-llvm19",
-            "version": "19.1.23"
+            "version": "19.1.24"
           },
           {
             "licenses": [
@@ -1572,13 +1544,6 @@
             ],
             "name": "sqlite3",
             "version": "3.54.1,1"
-          },
-          {
-            "licenses": [
-              "TclTk"
-            ],
-            "name": "tcl86",
-            "version": "8.6.18_1"
           },
           {
             "licenses": [
@@ -4512,7 +4477,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 230,
+        "freebsd": 225,
         "go": 0,
         "java": 0,
         "node": 563,
@@ -4520,7 +4485,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 798
+        "total": 793
       }
     }
   }
