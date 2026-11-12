@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-12T09:08:06Z",
+  "generated": "2026-11-12T22:00:36Z",
   "image": "uptime-kuma",
   "tags": {
     "latest": {
-      "app_version": "2.5.10",
+      "app_version": "2.5.11",
       "arch": "amd64",
-      "generated": "2026-11-12T09:05:53Z",
+      "generated": "2026-11-12T21:57:35Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1635,82 +1635,82 @@
           {
             "name": "@aws-sdk/core",
             "purl": "",
-            "version": "3.978.3"
+            "version": "3.978.7"
           },
           {
             "name": "@aws-sdk/credential-provider-cognito-identity",
             "purl": "",
-            "version": "3.972.73"
+            "version": "3.972.77"
           },
           {
             "name": "@aws-sdk/credential-provider-env",
             "purl": "",
-            "version": "3.972.74"
+            "version": "3.972.78"
           },
           {
             "name": "@aws-sdk/credential-provider-http",
             "purl": "",
-            "version": "3.972.76"
+            "version": "3.972.80"
           },
           {
             "name": "@aws-sdk/credential-provider-ini",
             "purl": "",
-            "version": "3.973.19"
+            "version": "3.973.23"
           },
           {
             "name": "@aws-sdk/credential-provider-login",
             "purl": "",
-            "version": "3.972.81"
+            "version": "3.972.85"
           },
           {
             "name": "@aws-sdk/credential-provider-node",
             "purl": "",
-            "version": "3.972.86"
+            "version": "3.972.90"
           },
           {
             "name": "@aws-sdk/credential-provider-process",
             "purl": "",
-            "version": "3.972.74"
+            "version": "3.972.78"
           },
           {
             "name": "@aws-sdk/credential-provider-sso",
             "purl": "",
-            "version": "3.973.18"
+            "version": "3.973.22"
           },
           {
             "name": "@aws-sdk/credential-provider-web-identity",
             "purl": "",
-            "version": "3.972.80"
+            "version": "3.972.84"
           },
           {
             "name": "@aws-sdk/credential-providers",
             "purl": "",
-            "version": "3.1152.0"
+            "version": "3.1159.0"
           },
           {
             "name": "@aws-sdk/nested-clients",
             "purl": "",
-            "version": "3.997.48"
+            "version": "3.997.52"
           },
           {
             "name": "@aws-sdk/signature-v4-multi-region",
             "purl": "",
-            "version": "3.996.48"
+            "version": "3.996.50"
           },
           {
             "name": "@aws-sdk/token-providers",
             "purl": "",
-            "version": "3.1150.0"
+            "version": "3.1159.0"
           },
           {
             "name": "@aws-sdk/types",
             "purl": "",
-            "version": "3.974.6"
+            "version": "3.975.0"
           },
           {
             "name": "@aws-sdk/xml-builder",
             "purl": "",
-            "version": "3.972.41"
+            "version": "3.972.42"
           },
           {
             "name": "@aws/lambda-invoke-store",
@@ -1785,7 +1785,7 @@
           {
             "name": "@azure/msal-browser",
             "purl": "",
-            "version": "5.25.1"
+            "version": "5.27.0"
           },
           {
             "name": "@azure/msal-common",
@@ -1990,7 +1990,7 @@
           {
             "name": "@smithy/core",
             "purl": "",
-            "version": "3.36.0"
+            "version": "3.37.0"
           },
           {
             "name": "@smithy/credential-provider-imds",
@@ -2005,7 +2005,7 @@
           {
             "name": "@smithy/node-http-handler",
             "purl": "",
-            "version": "4.12.1"
+            "version": "4.13.0"
           },
           {
             "name": "@smithy/signature-v4",
@@ -2335,7 +2335,7 @@
           {
             "name": "body-parser",
             "purl": "",
-            "version": "1.20.8"
+            "version": "1.20.9"
           },
           {
             "name": "boolbase",
@@ -2345,7 +2345,7 @@
           {
             "name": "bowser",
             "purl": "",
-            "version": "2.14.1"
+            "version": "2.15.0"
           },
           {
             "name": "brace-expansion",
@@ -2730,12 +2730,12 @@
           {
             "name": "encodeurl",
             "purl": "",
-            "version": "2.0.0"
+            "version": "2.0.1"
           },
           {
             "name": "encoding",
             "purl": "",
-            "version": "0.1.13"
+            "version": "0.1.14"
           },
           {
             "name": "encoding-sniffer",
@@ -2870,7 +2870,7 @@
           {
             "name": "follow-redirects",
             "purl": "",
-            "version": "1.16.1"
+            "version": "1.16.2"
           },
           {
             "name": "foreground-child",
@@ -3110,7 +3110,7 @@
           {
             "name": "ip-address",
             "purl": "",
-            "version": "10.7.4"
+            "version": "10.7.5"
           },
           {
             "name": "ipaddr.js",
@@ -3205,7 +3205,7 @@
           {
             "name": "jsonata",
             "purl": "",
-            "version": "2.2.2"
+            "version": "2.2.0"
           },
           {
             "name": "jsonwebtoken",
@@ -3510,7 +3510,7 @@
           {
             "name": "nan",
             "purl": "",
-            "version": "2.29.0"
+            "version": "2.30.0"
           },
           {
             "name": "nanoid",
@@ -3635,7 +3635,7 @@
           {
             "name": "on-finished",
             "purl": "",
-            "version": "2.4.1"
+            "version": "2.4.2"
           },
           {
             "name": "on-headers",
@@ -3865,7 +3865,7 @@
           {
             "name": "qs",
             "purl": "",
-            "version": "6.14.2"
+            "version": "6.14.3"
           },
           {
             "name": "querystringify",
@@ -4225,7 +4225,7 @@
           {
             "name": "tldts-core",
             "purl": "",
-            "version": "7.4.18"
+            "version": "7.4.19"
           },
           {
             "name": "toidentifier",
@@ -4305,7 +4305,7 @@
           {
             "name": "uptime-kuma",
             "purl": "",
-            "version": "2.5.10"
+            "version": "2.5.11"
           },
           {
             "name": "url-parse",
